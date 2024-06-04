@@ -347,7 +347,7 @@ Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 ![157](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/14ecda51-4ec6-4cfe-839c-c0535c7cd0dc)
 
 ![158](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84be91b1-ce55-4888-bfef-22fb82415217)
-Voltages at 20% and 80% of maximum voltage
+Voltages at 20% and 80% of maximum voltage:
 ```math
 20\%\ of\ output = 0.66\ V
 ```

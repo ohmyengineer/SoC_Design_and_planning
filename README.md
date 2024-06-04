@@ -46,8 +46,9 @@ Percentage\ of\ DFF's = 0.108429685 * 100 = 10.84296854\ \%
 ```
 
 ![28](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/01ce9f90-f8b7-4b44-a85f-4479d755ad1f)
-Chip Area for Module = 147712.918400 unit
-
+```math
+Chip\ Area\ for\ Module = 147712.918400 unit
+```
 
 ## Day 2-Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
 ## Day 3-Design library cell using Magic Layout and ngspice characterization

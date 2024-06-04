@@ -62,7 +62,12 @@ The run directory is created in the picorv32a file after preparation. Within the
 
 ![27](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/114d5182-01be-44fd-81ed-4396a8e57bec)
 Calculation of Flop Ratio and DFF % from synthesis statistics report file
-
+```math
+Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
+```
+```math
+Percentage\ of\ DFF's = Flop\ Ratio * 100
+```
 ```math
 Flop\ Ratio = \frac{1613}{14876} = 0.108429685
 ```

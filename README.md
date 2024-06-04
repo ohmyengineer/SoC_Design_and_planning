@@ -11,8 +11,12 @@ This repository contains the projects and work I completed during the VSD SoC De
 ## Introduction to QFN-48 Package, chip, pads, core, die and IPs
 ![1](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d7463b0-57cd-4c19-b5da-151a52451b33)
 - **Die:** it denotes the dimensions of the complete chip located at the corner.
-- **Core:** This area is designated for placing the logic gates.
+- **Core:** This area is designated for placing the logic gates. It includes all the combinational circuits, soft and hard IPs, and nets.
 - **Pads:** This area is utilized for transmitting signals from inside the chip to the outside, or vice versa.
+- **IPs:** Foundry IPs necessitate manual design or human intervention for their definition and creation, including SRAM, ADC, DAC, and PLLs.
+- **PDK:** PDKs act as a bridge between foundries and design engineers. They encompass a collection of files that simulate the fabrication process for the design tools employed in IC design, encompassing device models, DRC, LVS, physical extraction, layers, LEF, standard cell libraries, timing libraries, etc. In this workshop, the SkyWater 130nm PDK, particularly sky130_fd_sc_hd, is utilized, and openLANE is constructed around this PDK.
+
+
 
 ![2](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c1b2d362-7424-4be8-8cbb-6326b838c369)
 
@@ -29,9 +33,21 @@ Example of a RISC-V SoC: It includes elements such as SRAM, SoC, ADC, DAC, PLL, 
 
 ![7](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f4fe7711-e816-47da-9020-2ee0c5dc5605)
 
+### Software Application to Hardware Execution:
 
 ![8](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d22997d-726a-4f01-abe6-c5cb96e8f952)
+Within the system software, three layers are present:
+**Operating System (OS):**
+(1) Manages overall system operation.
+(2) Handles input/output (IO) operations, memory allocation, and low-level system functions.
+**Compiler:**
+(1)Translates high-level programming languages (e.g., C, C++, Java) into machine-readable instructions.
+(2)Generates instructions based on hardware architecture.
+**Assembler:**
+(1)Converts compiler-generated instructions into machine-executable binary code.
+(2)Translates assembly language into binary representations understood by hardware.
 
+Together, these layers enable software execution on computer systems by managing resources, translating code, and facilitating communication with hardware.
 
 ![22](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cb9d2ac0-62de-458a-a7dd-95d1cc6df1ab)
 

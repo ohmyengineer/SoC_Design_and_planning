@@ -13,8 +13,9 @@ This repository contains the projects and work I completed during the VSD SoC De
 ## Day 5
 
 ### new
-**select the tool directory**
+``` **select the tool directory**
 
-`cd Desktop/work/tools`
+'cd Desktop/work/tools'
+```
 
 #### old

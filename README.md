@@ -161,12 +161,49 @@ Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 
 ![69](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03b24ff7-4ddc-4996-b707-c6333dd3a275)
 
+![70](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/85d7cfb0-83de-48a3-a749-c39e641f45cf)
+
+![71](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6f8a2d83-121c-444b-a136-82603b3d0c75)
+
+![72](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/904a6acf-7cea-483e-88b4-ee106955f7c5)
+
+![73](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/00c21afc-e901-43e8-aaf0-1246ee8fc4d8)
+
+![74](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/92ac81f0-1048-4af1-a1ee-816c9ddf211a)
+
+![75](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cf4d6357-96c7-419b-9b88-7e925211e8db)
+
+![76](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0503f9e1-0509-447f-8310-45a6eec3d69c)
+
+![77](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2cccad14-3901-4f84-a86e-729a4d60a7ed)
+
+![78](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/33ebce2e-52cb-4467-a391-eb05ae4e7964)
+
+![79](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bab11107-65d9-4bcb-bda4-f33d7f0d983e)
+
+![80](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c4db52c8-e252-4e28-94c8-718b93b9171e)
+
+![81](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fc6596cd-5e87-489f-9c3d-228165972aa7)
+
+![82](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/92f7fcd0-9124-4869-a3f8-aac28c345fd2)
+
+![83](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e331b3d3-335e-41fb-b793-98927312bcaf)
+
+![84](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ddcf5431-f789-4e26-9441-c01a2394309c)
+
+![85](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e8ac6337-9473-420d-9b79-d1afb3a6cfcb)
+
+![86](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7b7c732a-e819-425b-b8b1-3918c907f79e)
+
+![87](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fdffcc49-8a7e-40f5-a8fc-9b9b260c23ba)
+
 
 
 
 
 
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
+
 
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree

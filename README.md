@@ -7,6 +7,8 @@ This repository contains the projects and work I completed during the VSD SoC De
 5) [Day 5-Final steps for RTL2GDS using tritonRoute and openSTA](#day-5-final-steps-for-rtl2gds-using-tritonroute-and-opensta)
 
 ## Day 1-Inception of open-source EDA, OpenLANE and Sky130 PDK
+![0](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/756cff7b-7d94-46e7-8389-91f9fd15abb8)
+
 ## Day 2-Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
 ## Day 4-Pre-layout timing analysis and importance of good clock tree

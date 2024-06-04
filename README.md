@@ -14,6 +14,7 @@ This repository contains the projects and work I completed during the VSD SoC De
 
 ### new
 **select the tool directory**
+
 `cd Desktop/work/tools`
 
 #### old

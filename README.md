@@ -411,6 +411,13 @@ Voltages at 20% and 80% of maximum voltage:
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree
 
+![193](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c2914292-f787-4eed-9b61-a9969aad4f60)
+![194a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03aaba6e-e8c6-417d-9c3c-cc6a05e606d6)
+![194](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/33bd3aef-01d4-43f8-9c80-8fd1a2dbf318)
+
+
+![195](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/108f737f-10be-4120-952b-f9ade09cd5e1)
+
 
 ## Day 5-Final steps for RTL2GDS using tritonRoute and openSTA
 

@@ -34,7 +34,7 @@ Example of a RISC-V SoC: It includes elements such as SRAM, SoC, ADC, DAC, PLL, 
 ![7](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f4fe7711-e816-47da-9020-2ee0c5dc5605)
 
 ### Software Application to Hardware Execution:
-
+Upon opening an application, the process unfolds across three distinct stages: Application Software, System Software, and Hardware chip. Initially, the user's interaction triggers the execution of the application. As the application code delves into the System Software layer, a series of sophisticated operations commence. Here, the code undergoes a pivotal transformation, transitioning from its human-readable form into machine language, specifically binary instructions. This intricate conversion process is essential, as it ensures compatibility with the underlying Hardware chip. As the converted binary instructions are relayed to the Hardware chip, a cascade of intricate operations ensues. The Hardware chip interprets these instructions, orchestrating a symphony of electronic signals and computations to execute the desired functionalities encapsulated within the application. This seamless interaction between software and hardware culminates in the seamless presentation of the application's features to the user, embodying the synergy between technology's abstract and tangible realms.
 ![8](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d22997d-726a-4f01-abe6-c5cb96e8f952)
 Within the system software, three layers are present:
 **Operating System (OS):**

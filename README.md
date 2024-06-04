@@ -381,8 +381,10 @@ Voltages at 20% and 80% of maximum voltage:
 ![169](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e18c2e0e-e56e-4cb8-9710-5669ce0a36cb)
 
 ### Cell Fall delay
-![171](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f57c666f-f3dc-4436-a008-a2f8396e3b07)
+
 ![170](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/66a083d4-7587-4830-a515-0ea4b4e6247b)
+![171](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f57c666f-f3dc-4436-a008-a2f8396e3b07)
+
 
 
 

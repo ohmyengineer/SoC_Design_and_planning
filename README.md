@@ -15,13 +15,15 @@ This repository contains the projects and work I completed during the VSD SoC De
 - **Pads:** This area is utilized for transmitting signals from inside the chip to the outside, or vice versa.
 
 ![2](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c1b2d362-7424-4be8-8cbb-6326b838c369)
-Example of a RISC-V SoC: It includes elements such as SRAM, SoC, ADC, DAC, PLL, and SPI. The components PLL, SRAM, ADC, and DAC are referred to as foundry IPs.
+
 
 ![3](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0a173205-a129-41f4-b19e-7bafe3132256)
-
+### RISC V
+RISC-V is a computer language used for communication with the computer. The name abbreviation indicates that "five" refers to the number of generations of RISC architecture developed at the University of California, Berkeley. The chip is positioned in the center, as depicted in the figure, and is connected to all other components via wiring, as illustrated below.
 ![4](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ee66ca0a-833c-4ac1-b97e-e1ce9fc418f8)
 
 ![5](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e9e606fe-930b-4147-a4b9-28cab3f550c5)
+Example of a RISC-V SoC: It includes elements such as SRAM, SoC, ADC, DAC, PLL, and SPI. The components PLL, SRAM, ADC, and DAC are referred to as foundry IPs.
 
 ![6](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/559bc670-6464-44f7-9810-4db332008a00)
 

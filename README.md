@@ -466,4 +466,6 @@ Voltages at 20% and 80% of maximum voltage:
 ![235](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/039825bf-2f52-4923-b276-5c11103bf5b4)
 ![236](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/de987e85-65b8-450c-ad61-c9615361f231)
 ![237](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1a59b98a-45dc-473d-b6ab-8f584407e0eb)
+![238a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/353ada51-67df-4763-a781-6c876cca5097)
+![238](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6c0dbe84-3567-49e3-a6d4-5c4d7b515553)
 

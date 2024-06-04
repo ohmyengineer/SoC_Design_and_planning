@@ -202,8 +202,24 @@ Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 
 
 
+
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
 
+![88](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b0cb042d-44cb-4213-ad43-b918d603535b)
+
+![89](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0c1d1b38-075d-4ad9-8ccc-1f5d111c5d9f)
+
+![90](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/16472b9e-ad60-481c-9c04-3a9b0a769365)
+
+![91](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/971b6fed-1324-4002-bd43-cc077127a693)
+
+![92](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8a6730c7-1447-4a24-8cf8-c5ee26ae0e3b)
+
+![93](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/36310ebd-dd20-409e-874f-27f2cc8f589e)
+
+![94](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7e2663a2-92e2-48ae-b25d-3851f745faf9)
+
+![95](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1f5635f5-0858-428c-a805-893c1bed3999)
 
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree

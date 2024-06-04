@@ -37,13 +37,13 @@ Example of a RISC-V SoC: It includes elements such as SRAM, SoC, ADC, DAC, PLL, 
 Upon opening an application, the process unfolds across three distinct stages: Application Software, System Software, and Hardware chip. Initially, the user's interaction triggers the execution of the application. As the application code delves into the System Software layer, a series of sophisticated operations commence. Here, the code undergoes a pivotal transformation, transitioning from its human-readable form into machine language, specifically binary instructions. This intricate conversion process is essential, as it ensures compatibility with the underlying Hardware chip. As the converted binary instructions are relayed to the Hardware chip, a cascade of intricate operations ensues. The Hardware chip interprets these instructions, orchestrating a symphony of electronic signals and computations to execute the desired functionalities encapsulated within the application. This seamless interaction between software and hardware culminates in the seamless presentation of the application's features to the user, embodying the synergy between technology's abstract and tangible realms.
 ![8](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d22997d-726a-4f01-abe6-c5cb96e8f952)
 Within the system software, three layers are present:
--**Operating System (OS):**
+- **Operating System (OS):**
 (1) Manages overall system operation.
 (2) Handles input/output (IO) operations, memory allocation, and low-level system functions.
--**Compiler:**
+- **Compiler:**
 (1)Translates high-level programming languages (e.g., C, C++, Java) into machine-readable instructions.
 (2)Generates instructions based on hardware architecture.
--**Assembler:**
+- **Assembler:**
 (1)Converts compiler-generated instructions into machine-executable binary code.
 (2)Translates assembly language into binary representations understood by hardware.
 
@@ -64,7 +64,7 @@ run_synthesis
 
 ![23](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/770ed8d6-cc42-465f-89d2-978bdcda33d0)
 
-The run directory is created in the picorv32a file after preparation. Within the directory, the current date is created. Because the sythesis was not run, the run folder is empty.
+The runs directory is created in the picorv32a file after preparation. Within the directory, the current date is created. Because the sythesis was not run, the run folder is empty.
 ![23a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/894143ea-2c48-48d6-ba2c-b93242fb572d)
 
 ![24](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7c6b7ad6-b6d7-494f-9b79-023c6e263023)

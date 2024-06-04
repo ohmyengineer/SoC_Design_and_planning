@@ -386,7 +386,27 @@ Voltages at 20% and 80% of maximum voltage:
 ![171](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f57c666f-f3dc-4436-a008-a2f8396e3b07)
 
 
+![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/45768272-ab7e-47a4-99d5-2f6011d94ee0)
+![173](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bbb829d0-f97f-439e-a8e5-7b8ebc2e2522)
+![174](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55ac2331-c031-4917-8c95-da61abedf4f5)
+![175](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e56c7540-eeda-4503-967d-bc5523e95c0a)
+![176](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/59056dae-e747-42a4-a776-dedccddc8228)
+![177](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/613608c9-aefa-437b-8a9b-171d93602713)
+![178](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9c4ef9a7-5106-40dd-905a-b0cd25269a03)
+![179](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7e1d263a-2684-47d0-959d-52468e890a12)
+![180](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/889591b2-197b-4c97-9943-ac6c18b990f6)
+![181](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03e1a25c-b945-4b3a-b22b-c9760953bc78)
+![182](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/97d98166-621c-4c42-8258-4d79695677fa)
+![183](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/46d5ebb8-74cc-49cb-9b18-8d1a04775403)
+![184](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6eac334c-2106-4e36-acf8-d4e5250e8cdd)
+![185](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/86306eae-5209-4fe4-b0b7-6b1560bc488d)
 
+![186](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/072a12e9-b6a4-45b4-bf03-e9bf083d9b4d)
+![187](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/24ddcec4-ce37-4071-a40e-0e793432a167)
+![188](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cdd1e8cf-7a02-48c9-9ff0-fc026ebd350b)
+![189](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bf1e0997-c90e-4828-b0eb-950d2471117a)
+![190](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/16fbe121-e4f9-4832-9482-38ff78979fae)
+![191](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f34d40f6-dc6c-4cd3-896b-3898f77e1332)
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree
 

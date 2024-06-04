@@ -417,6 +417,26 @@ Voltages at 20% and 80% of maximum voltage:
 
 
 ![195](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/108f737f-10be-4120-952b-f9ade09cd5e1)
+![196](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/474fb9dc-7a8d-4dc5-b1c9-6d1e90995441)
+![197](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/758c6a4e-768b-466b-990c-2b45974a19a5)
+![198](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9bdeab41-5fe6-4438-a3f4-81206ff9734e)
+![199](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ff3a1fb4-0c83-4604-9ef3-e9e3cf12873e)
+![200](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2e6fde51-1fce-41de-97a0-f41e3e4da7c5)
+![201](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2ab96628-fb23-46bc-b6e6-fb6864d66aff)
+
+![202](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d7f689ac-fd13-4875-87c4-49cf00d931b3)
+![203](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3a051aa0-bd86-48ac-b92a-2a8241394a45)
+![204](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d6e056c9-4d01-4160-9f39-44ea2faaa140)
+![205](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e916aa5d-896d-40d5-8c6b-3f27cef60fe1)
+![206](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/795c4510-b20d-426f-a97f-8323cdc9e532)
+![207](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d3d9e86a-adcb-4b35-97a1-ff5f8e43391b)
+![208](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1070323e-5e22-4b6c-ba3e-ff76d429bb07)
+![209](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/473e9189-a1f9-499f-b431-0b92d06d1b3d)
+![210](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/22827b9b-fde8-483b-9f9c-15ba808b3b4c)
+![211](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/448868e7-c4be-4896-a192-c4f2a719edcd)
+![212](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3c35d575-119e-499a-9705-d6ec002daab0)
+![213](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/76e3100c-2fdb-4334-b993-a0d634ff50bc)
+![214](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/da912964-3cc5-4315-a745-c699b0ab4c54)
 
 
 ## Day 5-Final steps for RTL2GDS using tritonRoute and openSTA

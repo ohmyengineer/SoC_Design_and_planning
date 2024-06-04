@@ -447,6 +447,14 @@ Voltages at 20% and 80% of maximum voltage:
 
 ![221a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/238e5752-92c5-45fd-b7d8-2f5e6895d77c)
 ![221](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2ad91ca3-df41-46af-93c0-b11e3ae104f9)
+![222](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8f7661b4-f0af-4f39-979f-3e2716ec4edc)
+![223](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5b0adcd1-811f-412f-a629-2c6840d87c6e)
+![224](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e21377a8-2788-463c-bd9d-aecb1348e5b3)
+![225](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/64702e87-5e95-433f-9394-a52ab46b4f46)
+![226](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a711589d-bfac-489c-9b41-0f08df2a4f90)
+![227](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cfea8f78-23cd-4e86-8e98-7701d8d890de)
+![228](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d00923f3-5aec-4a0a-84ab-6586fc34ff25)
+
 
 ## Day 5-Final steps for RTL2GDS using tritonRoute and openSTA
 

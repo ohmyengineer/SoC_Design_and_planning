@@ -8,10 +8,14 @@ This repository contains the projects and work I completed during the VSD SoC De
 
 ## Day 1-Inception of open-source EDA, OpenLANE and Sky130 PDK
 ![0](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/756cff7b-7d94-46e7-8389-91f9fd15abb8)
-
+## Introduction to QFN-48 Package, chip, pads, core, die and IPs
 ![1](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d7463b0-57cd-4c19-b5da-151a52451b33)
+- **Die:** it denotes the dimensions of the complete chip located at the corner.
+- **Core:** This area is designated for placing the logic gates.
+- **Pads:** This area is utilized for transmitting signals from inside the chip to the outside, or vice versa.
 
 ![2](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c1b2d362-7424-4be8-8cbb-6326b838c369)
+Example of a RISC-V SoC: It includes elements such as SRAM, SoC, ADC, DAC, PLL, and SPI. The components PLL, SRAM, ADC, and DAC are referred to as foundry IPs.
 
 ![3](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0a173205-a129-41f4-b19e-7bafe3132256)
 

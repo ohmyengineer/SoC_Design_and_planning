@@ -31,6 +31,7 @@ This repository contains the projects and work I completed during the VSD SoC De
 
 ![23](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/770ed8d6-cc42-465f-89d2-978bdcda33d0)
 
+The run directory is created in the picorv32a file after preparation. Within the folder, the current date is created. Because the synthetic was not run, the run folder is empty.
 ![23a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/894143ea-2c48-48d6-ba2c-b93242fb572d)
 
 ![24](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7c6b7ad6-b6d7-494f-9b79-023c6e263023)

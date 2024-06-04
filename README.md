@@ -92,6 +92,7 @@ Chip\ Area\ for\ Module = 147712.918400 unit
 ```
 
 ## Day 2-Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
+### Define Width and Height of Core and Die
 ![29](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55a63d32-ba1d-4fa5-afba-57585c3ce2a8)
 
 ![30](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8b42c546-aabb-4547-8f43-fdda11703c9c)

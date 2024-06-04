@@ -407,6 +407,7 @@ Voltages at 20% and 80% of maximum voltage:
 ![189](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bf1e0997-c90e-4828-b0eb-950d2471117a)
 ![190](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/16fbe121-e4f9-4832-9482-38ff78979fae)
 ![191](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f34d40f6-dc6c-4cd3-896b-3898f77e1332)
+![192](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/10d68e72-5119-43a5-a8e3-4944b098ccd0)
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree
 

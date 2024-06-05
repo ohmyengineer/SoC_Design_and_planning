@@ -112,7 +112,7 @@ Components and Their Areas:
   Total\ Area= (Number\  of\ FFs ×Area\ of\ Each\ FF)+(Number\ of\ AND\ Gates×Area\ of\ Each\ AND\ Gate)+(Number\ of\ OR\ Gates×Area\ of\ Each\ OR\ Gate)
 ```
 ```math
-Total \ Area=(2×1 sq. unit)\+(1×1 sq. unit)+(1×1 sq. unit)
+Total \ Area=(2×1 sq. unit)+(1×1 sq. unit)+(1×1 sq. unit)
 ```
 ```math
 Total \ Area=2+1+1=4 sq. units
@@ -159,8 +159,24 @@ Aspect\ Ratio\ of\ Core = \frac{2}{2} = 1
 
 ![37](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/46064baf-3bba-4161-bccd-a9c915d9e24a)
 
-![38](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b248bc65-3f29-4eaf-9197-6a294224f8ef)
+*Locations of Preplaced Cells*
+Consider a large combinational logic circuit with 𝑁 logic gates performing a significant function. To manage its complexity, we divide the circuit into smaller segments. Specifically, we split the circuit into two parts, placing each into separate blocks, Block A and Block B. These blocks are then implemented independently.
+- This approach allows for effective management of complexity, optimal performance, and better utilization of chip area by handling each block independently.
 
+
+![38](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b248bc65-3f29-4eaf-9197-6a294224f8ef)
+*Extending Input/Output Pins and Black Boxing :*
+After dividing the circuit into Block A and Block B, we proceed with extending the input and output pins for each block. Then, we black box these blocks, making their internal details invisible to anyone looking at the main netlist. This process involves the following steps:
+*Extend Input/Output Pins:*
+- Extend the input and output pins for both Block A and Block B to facilitate connections with other parts of the circuit.
+*Black Box the Blocks:*
+- Encapsulate Block A and Block B as black boxes. This means the internal logic of each block is hidden, and only the input and output interfaces are visible.
+- This abstraction makes the upper portion of each block invisible from the top-level view or to anyone examining the main netlist.
+*Separate into Different IPs or Modules:*
+- Once black-boxed, Block A and Block B can be treated as independent Intellectual Property (IP) blocks or modules.
+- These IPs can now be integrated separately into different designs or reused in other projects.
+
+By extending the input and output pins, black boxing the blocks, and separating them into distinct IPs or modules, we achieve a modular design approach. This method simplifies the main netlist, enhances reusability, and allows for easier integration and management of complex circuits.
 ![39](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/be807d2a-cb70-412f-a31d-9ba15fa163bc)
 
 ![40](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84ec243f-7a98-4831-b9a1-a6bf46c88758)

@@ -470,7 +470,7 @@ ls -ltr
 ![96](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2169914f-fe9a-42a5-a2c0-86772eaa255d)
 
 ![97](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f32343e9-8701-4990-ab8f-033499ae0d38)
-*Command to open custom inverter layout in magic:*
+**Command to open custom inverter layout in magic:**
 ```bash
 
 magic -T sky130A.tech sky130_inv.mag &
@@ -481,11 +481,15 @@ magic -T sky130A.tech sky130_inv.mag &
 
 ![100](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/eba30bd5-475d-480f-b751-e5362186feb9)
 
-*The connectivity of the output Y to the drain of both PMOS and NMOS transistors has been confirmed:*
+**The connectivity of the output Y to the drain of both PMOS and NMOS transistors has been confirmed:**
 ![101](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e7a4bf80-1d21-4765-af63-2d0e993e0f59)
 
-![102](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/455836f5-f50e-4543-b1d0-1cb6cc89aa56)
 
+### 16-Mask CMOS Process:
+**1) Selecting a substrate:**
+p-type silicon substrate is selected . A p-type substrate is a silicon base layer doped with elements like boron to create an abundance of positive charge carriers (holes). 
+![102](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/455836f5-f50e-4543-b1d0-1cb6cc89aa56)
+**2) Creating active region for transistors:**
 
 ![103](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f7ed0926-c19b-4492-b9e8-3491fa2994b1)
 
@@ -498,7 +502,7 @@ magic -T sky130A.tech sky130_inv.mag &
 ![107](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1766493b-e779-4585-a9ef-260538451bb0)
 
 ![108](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d4d2027e-80aa-45ec-bb58-fc015d40b455)
-
+**3) N-well and P-well Formation:**
 ![109](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e64293ef-68c7-4ff6-b311-6d49cb0b66ec)
 
 ![110](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3c236f67-2404-4641-a91f-38b511c049c2)
@@ -600,7 +604,7 @@ magic -T sky130A.tech sky130_inv.mag &
 ![158](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84be91b1-ce55-4888-bfef-22fb82415217)
 Maximum Vdd Value:
 ![max vdd value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7f91c262-e719-4083-922a-f4587202d776)
-*Maximum Vdd value = 3.30V*
+**Maximum Vdd value = 3.30V**
 Voltages at 20% and 80% of maximum voltage:
 ```math
 20\%\ of\ output = 0.66\ V
@@ -612,11 +616,11 @@ Voltages at 20% and 80% of maximum voltage:
 ```math
 Rise\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ taken\ for\ output\ to\ rise\ to\ 20\%
 ```
-- *For 20%:*
+- **For 20%:**
 ![20% vtc](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/babf7212-6e45-4bd9-b095-11badacdf06e)
 ![20% value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e1cf6261-7b5b-4984-8e8a-c03943411f13)
 
-- *For 80%*
+- **For 80%**
 ![80% vtc](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ddedcd74-9432-4222-b017-b3c611c0b76b)
 ![80% value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/35ba19b6-07d1-450d-a157-80a62eb1d1f3)
 
@@ -631,13 +635,13 @@ Rise\ time = 2.2396 - 2.17993 = 0.05967\ ns
 ```math
 Fall\  time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ taken\ for\ output\ to\ fall\ to\ 80\%
 ```
-- *For 20%*
+- **For 20%**
 ![164](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/60fbe637-a539-44be-a958-96c76f452ef2)
 ![165](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/98aeeb13-1399-4114-8c18-4defcece8335)
 
 
 
-- *For 80% :*
+- **For 80% :**
 ![166](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b235f006-4844-4794-981e-af13975c9188)
 ![167](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9b59854f-2bcd-4ca2-b658-eb14c0093889)
 
@@ -649,7 +653,7 @@ Fall\ time = 4.09338 - 4.07095 = 0.02243\ ns
 ```math
 Cell\ Rise\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ for\ input\ to\ fall\ to\ 50\%
 ```
-- *For 50% :*
+- **For 50% :**
 ![168](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5f1987b6-f73d-48d6-a3d5-71dc5e2db910)
 ![169](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e18c2e0e-e56e-4cb8-9710-5669ce0a36cb)
 
@@ -662,7 +666,7 @@ Cell\ Rise\ Delay = 2.20722 - 2.15008 = 0.0574\ ns
 ```math
 Cell\ Fall\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ for\ input\ to\ rise\ to\ 50\%
 ```
-- *For 50% :*
+- **For 50% :**
 ![170](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/66a083d4-7587-4830-a515-0ea4b4e6247b)
 ![171](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f57c666f-f3dc-4436-a008-a2f8396e3b07)
 
@@ -693,19 +697,19 @@ magic -d XR &
 
 ![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b7b24cf2-daa1-4e51-bc9f-d1a521e746cf)
 ![173](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bbb829d0-f97f-439e-a8e5-7b8ebc2e2522)
-*.magicrc File:*
+**.magicrc File:**
 ![174](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55ac2331-c031-4917-8c95-da61abedf4f5)
-*Poly.9 rule incorrectly implemented:*
+**Poly.9 rule incorrectly implemented:**
 ![175](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e56c7540-eeda-4503-967d-bc5523e95c0a)
 ![176](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/59056dae-e747-42a4-a776-dedccddc8228)
 ![177](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/613608c9-aefa-437b-8a9b-171d93602713)
 ![178](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9c4ef9a7-5106-40dd-905a-b0cd25269a03)
 ![179](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7e1d263a-2684-47d0-959d-52468e890a12)
-*New commands added to the sky130A.tech file to update DRC:*
+**New commands added to the sky130A.tech file to update DRC:**
 ![180](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/889591b2-197b-4c97-9943-ac6c18b990f6)
 ![181](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03e1a25c-b945-4b3a-b22b-c9760953bc78)
 
-Commands to run in tkcon window
+**Commands to run in tkcon window**
 
 ```tcl
 
@@ -715,16 +719,16 @@ drc check
 
 drc why
 ```
-*After rule is implemented:*
+**After rule is implemented:**
 ![182](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/97d98166-621c-4c42-8258-4d79695677fa)
 
-*Correction of the incorrectly implemented difftap.2 simple rule:*
+**Correction of the incorrectly implemented difftap.2 simple rule:**
 ![183](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/46d5ebb8-74cc-49cb-9b18-8d1a04775403)
 ![184](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6eac334c-2106-4e36-acf8-d4e5250e8cdd)
-*Inserted new commands in sky130A.tech file to update DRC:*
+**Inserted new commands in sky130A.tech file to update DRC:**
 ![185](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/86306eae-5209-4fe4-b0b7-6b1560bc488d)
 ![186](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/072a12e9-b6a4-45b4-bf03-e9bf083d9b4d)
-*Commands to run in tkcon window:*
+**Commands to run in tkcon window:**
 ```tcl
 tech load sky130A.tech
 
@@ -747,10 +751,10 @@ feed clear
 ![187](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/24ddcec4-ce37-4071-a40e-0e793432a167)
 ![188](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cdd1e8cf-7a02-48c9-9ff0-fc026ebd350b)
 ![189](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bf1e0997-c90e-4828-b0eb-950d2471117a)
-*Inserted new commands in sky130A.tech file to update DRC:*
+**Inserted new commands in sky130A.tech file to update DRC:**
 ![190](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/16fbe121-e4f9-4832-9482-38ff78979fae)
 ![191](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f34d40f6-dc6c-4cd3-896b-3898f77e1332)
-*Commands to run in tkcon window:*
+**Commands to run in tkcon window:**
 ```tcl
 tech load sky130A.tech
 
@@ -760,7 +764,7 @@ drc check
 
 drc why
 ```
-*After rule is implemented:*
+**After rule is implemented:**
 ![192](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/10d68e72-5119-43a5-a8e3-4944b098ccd0)
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree
@@ -774,7 +778,7 @@ magic -T sky130A.tech sky130_inv.mag &
 ![193](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c2914292-f787-4eed-9b61-a9969aad4f60)
 ![194a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03aaba6e-e8c6-417d-9c3c-cc6a05e606d6)
 
-*Commands for tkcon window to set grid as tracks of locali layer:*
+**Commands for tkcon window to set grid as tracks of locali layer:**
 
 ```tcl
 help grid
@@ -786,12 +790,12 @@ grid 0.46um 0.34um 0.23um 0.17um
 
 ![195](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/108f737f-10be-4120-952b-f9ade09cd5e1)
 
-*Command for tkcon window to write lef:*
+**Command for tkcon window to write lef:**
 ```tcl
 lef write
 ```
 ![196](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/474fb9dc-7a8d-4dc5-b1c9-6d1e90995441)
-*Newly generated lef file:*
+**Newly generated lef file:**
 ![197](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/758c6a4e-768b-466b-990c-2b45974a19a5)
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
@@ -802,7 +806,7 @@ cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/
 ![198](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9bdeab41-5fe6-4438-a3f4-81206ff9734e)
 ![199](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ff3a1fb4-0c83-4604-9ef3-e9e3cf12873e)
 ![200](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2e6fde51-1fce-41de-97a0-f41e3e4da7c5)
-*Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow:*
+**Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow:**
 
 ```tcl
 set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
@@ -814,7 +818,7 @@ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/sr
 ```
 Edited config.tcl to include the new 'lef' file and updated the library paths to the ones added in the 'src' directory.
 ![201](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2ab96628-fb23-46bc-b6e6-fb6864d66aff)
-*Run openlane flow synthesis with newly inserted custom inverter cell:*
+**Run openlane flow synthesis with newly inserted custom inverter cell:**
 
 Commands to initiate the OpenLANE flow, incorporating the new lef file and performing synthesis.
 
@@ -863,7 +867,7 @@ run_synthesis
 ```
 ![206](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/795c4510-b20d-426f-a97f-8323cdc9e532)
 ![207](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d3d9e86a-adcb-4b35-97a1-ff5f8e43391b)
-*Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow:*
+**Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow:**
 ```tcl
 init_floorplan
 place_io
@@ -871,7 +875,7 @@ tap_decap_or
 ```
 ![208](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1070323e-5e22-4b6c-ba3e-ff76d429bb07)
 
-*With the floorplan completed, we can proceed to placement using the following command:*
+**With the floorplan completed, we can proceed to placement using the following command:**
 
 ```tcl
 run_placement
@@ -886,23 +890,23 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 ![210](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/22827b9b-fde8-483b-9f9c-15ba808b3b4c)
 ![211](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/448868e7-c4be-4896-a192-c4f2a719edcd)
-*A custom inverter has been inserted into the placement DEF with proper abutment:*
+**A custom inverter has been inserted into the placement DEF with proper abutment:**
 ![212](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3c35d575-119e-499a-9705-d6ec002daab0)
-*To view the internal layers of cells, use the command for opening the Tkcon window:*
+**To view the internal layers of cells, use the command for opening the Tkcon window:**
 
 ```tcl
 expand
 ```
 
 
-*The alignment of power pins with other cells from the library is distinctly visible, ensuring proper abutment:*
+**The alignment of power pins with other cells from the library is distinctly visible, ensuring proper abutment:**
 ![213](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/76e3100c-2fdb-4334-b993-a0d634ff50bc)
 ![214](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/da912964-3cc5-4315-a745-c699b0ab4c54)
 A new pre_sta.conf file has been created for Static Timing Analysis (STA) in the OpenLANE directory.
 ![215](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/01967145-34cf-413a-bdb4-b95995cdfb26)
 A new my_base.sdc file has been created for Static Timing Analysis (STA) in the openlane/designs/picorv32a/src directory. This file is based on the openlane/scripts/base.sdc file.
 ![216](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0dbc57c8-c742-4bc5-9bc7-cae85f65e102)
-*Commands to run STA in another terminal:*
+**Commands to run STA in another terminal:**
 
 ```bash
 
@@ -928,7 +932,7 @@ exit
 ![219](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9d9e15ae-7d75-4d37-8275-b4df1913fb83)
 ![220](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e4ad2400-7039-458b-b141-68c750b55c42)
 
-*Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages:*
+**Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages:**
                                                       
 
 ```tcl
@@ -972,7 +976,7 @@ run_cts
 
 
 ## Day 5-Final steps for RTL2GDS using tritonRoute and openSTA
-*Perform generation of Power Distribution Network (PDN) and explore the PDN layout:*
+**Perform generation of Power Distribution Network (PDN) and explore the PDN layout:**
 
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane
@@ -1023,7 +1027,7 @@ gen_pdn
 ![242](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a24d230b-777d-475a-a5d6-f7a78a9d9e7b)
 ![242a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/db7f7e9a-d06d-4f80-b0d3-2241deac0a47)
 
-*Perfrom detailed routing using TritonRoute and explore the routed layout:*
+**Perfrom detailed routing using TritonRoute and explore the routed layout:**
 
 ```tcl
 
@@ -1046,7 +1050,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![246](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e2a0d32f-46b4-408e-aa9c-4892863142b7)
 ![247](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8c058db9-5952-4dfb-9961-36e08a1ad986)
 ![248](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ab356d8e-87ea-4525-9042-2650c33b59e4)
-*Post-Route parasitic extraction using SPEF extractor:*
+**Post-Route parasitic extraction using SPEF extractor:**
 
 ```bash
 
@@ -1054,7 +1058,7 @@ cd Desktop/work/tools/SPEF_EXTRACTOR
 
 python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
 ```
-*Post-Route OpenSTA timing analysis with the extracted parasitics of the route:*
+**Post-Route OpenSTA timing analysis with the extracted parasitics of the route:**
 
 ```tcl
 openroad

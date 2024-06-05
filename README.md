@@ -758,15 +758,70 @@ gen_pdn
 ![241](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d493f55-8735-41b1-9752-6239aed3c36b)
 ![242](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a24d230b-777d-475a-a5d6-f7a78a9d9e7b)
 ![242a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/db7f7e9a-d06d-4f80-b0d3-2241deac0a47)
+
+*Perfrom detailed routing using TritonRoute and explore the routed layout:*
+
+```tcl
+
+echo $::env(CURRENT_DEF)
+
+echo $::env(ROUTING_STRATEGY)
+
+run_routing
+```
 ![243](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/635d2ed4-cb8e-47a7-8b00-8d7ec60734e0)
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/routing/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
+```
+
 ![244](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/de39d893-be8d-4565-a523-071289b971ed)
+
 ![245](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d194eaf-4e57-4dbd-a632-bb99aadebea7)
 ![246](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e2a0d32f-46b4-408e-aa9c-4892863142b7)
 ![247](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8c058db9-5952-4dfb-9961-36e08a1ad986)
 ![248](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ab356d8e-87ea-4525-9042-2650c33b59e4)
+*Post-Route parasitic extraction using SPEF extractor:*
+
+```bash
+
+cd Desktop/work/tools/SPEF_EXTRACTOR
+
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+```
+*Post-Route OpenSTA timing analysis with the extracted parasitics of the route:*
+
+```tcl
+openroad
+
+read_lef /openLANE_flow/designs/picorv32a/runs/31-05_11-50/tmp/merged.lef
+
+read_def /openLANE_flow/designs/picorv32a/runs/31-05_11-50/results/routing/picorv32a.def
+
+write_db pico_route.db
+
+read_db pico_route.db
+
+read_verilog /openLANE_flow/designs/picorv32a/runs/31-05_11-50/results/synthesis/picorv32a.synthesis_preroute.v
+
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+link_design picorv32a
+
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+set_propagated_clock [all_clocks]
+
+read_spef /openLANE_flow/designs/picorv32a/runs/31-05_11-50/results/routing/picorv32a.spef
+
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+```
 ![249](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/719bfa90-6681-4730-9689-7e992587b8b2)
 ![250](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fe2dbabe-0169-4b9c-9405-c52f56add230)
 ![251](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/300f0045-323f-4113-bf40-c47526757e4f)
+### Final generated layout of the complete RTL-to-GDSII flow using OpenLane:
 ![252](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/14c78ec9-a893-44cb-8391-d9772d71d950)
 
 

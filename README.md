@@ -600,7 +600,7 @@ magic -T sky130A.tech sky130_inv.mag &
 ![158](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84be91b1-ce55-4888-bfef-22fb82415217)
 Maximum Vdd Value:
 ![max vdd value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7f91c262-e719-4083-922a-f4587202d776)
-
+*Maximum Vdd value = 3.30V*
 Voltages at 20% and 80% of maximum voltage:
 ```math
 20\%\ of\ output = 0.66\ V
@@ -609,41 +609,66 @@ Voltages at 20% and 80% of maximum voltage:
 80\%\ of\ output = 2.64\ V
 ```
 ### Rise Time
-20%
+```math
+Rise\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ taken\ for\ output\ to\ rise\ to\ 20\%
+```
+- *For 20%:*
 ![20% vtc](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/babf7212-6e45-4bd9-b095-11badacdf06e)
 ![20% value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e1cf6261-7b5b-4984-8e8a-c03943411f13)
 
-
-
-80%
+- *For 80%*
 ![80% vtc](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ddedcd74-9432-4222-b017-b3c611c0b76b)
 ![80% value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/35ba19b6-07d1-450d-a157-80a62eb1d1f3)
 
 
+```math
+Rise\ time = 2.2396 - 2.17993 = 0.05967\ ns 
+```
+
+
 
 ### Fall Time
-20%
+```math
+Fall\  time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ taken\ for\ output\ to\ fall\ to\ 80\%
+```
+- *For 20%*
 ![164](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/60fbe637-a539-44be-a958-96c76f452ef2)
 ![165](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/98aeeb13-1399-4114-8c18-4defcece8335)
 
 
 
-80%
+- *For 80% :*
 ![166](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b235f006-4844-4794-981e-af13975c9188)
 ![167](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9b59854f-2bcd-4ca2-b658-eb14c0093889)
 
-
+```math
+Fall\ time = 4.09338 - 4.07095 = 0.02243\ ns
+```
 
 ### Cell Rise delay
+```math
+Cell\ Rise\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ for\ input\ to\ fall\ to\ 50\%
+```
+- *For 50% :*
 ![168](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5f1987b6-f73d-48d6-a3d5-71dc5e2db910)
 ![169](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e18c2e0e-e56e-4cb8-9710-5669ce0a36cb)
 
 
+```math
+Cell\ Rise\ Delay = 2.20722 - 2.15008 = 0.0574\ ns
+```
 
 ### Cell Fall delay
+```math
+Cell\ Fall\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ for\ input\ to\ rise\ to\ 50\%
+```
+- *For 50% :*
 ![170](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/66a083d4-7587-4830-a515-0ea4b4e6247b)
 ![171](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f57c666f-f3dc-4436-a008-a2f8396e3b07)
 
+```math
+Cell\ Fall\ Delay = 4.07529 - 4.05006 = 0.02523\ ns 
+```
 
 
 ![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/45768272-ab7e-47a4-99d5-2f6011d94ee0)

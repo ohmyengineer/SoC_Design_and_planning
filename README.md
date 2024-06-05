@@ -795,18 +795,72 @@ expand
 *The alignment of power pins with other cells from the library is distinctly visible, ensuring proper abutment:*
 ![213](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/76e3100c-2fdb-4334-b993-a0d634ff50bc)
 ![214](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/da912964-3cc5-4315-a745-c699b0ab4c54)
-
+A new pre_sta.conf file has been created for Static Timing Analysis (STA) in the OpenLANE directory.
 ![215](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/01967145-34cf-413a-bdb4-b95995cdfb26)
+A new my_base.sdc file has been created for Static Timing Analysis (STA) in the openlane/designs/picorv32a/src directory. This file is based on the openlane/scripts/base.sdc file.
 ![216](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0dbc57c8-c742-4bc5-9bc7-cae85f65e102)
+*Commands to run STA in another terminal:*
+
+```bash
+
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+sta pre_sta.conf
+```
 ![217](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d472c215-88a4-47eb-a535-d68c47081015)
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/
+
+cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+
+```
+```tcl
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+
+exit
+```
+
 ![218](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/31927f20-9046-4453-8a88-ddaa098515eb)
 ![219](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9d9e15ae-7d75-4d37-8275-b4df1913fb83)
 ![220](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e4ad2400-7039-458b-b141-68c750b55c42)
 
+*Since we confirmed that netlist is replaced and will be loaded in PnR but since we want to follow up on the earlier 0 violation design we are continuing with the clean design to further stages:*
+                                                      
+
+```tcl
+
+prep -design picorv32a -tag 31-05_11-50 -overwrite
+
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+set ::env(SYNTH_SIZING) 1
+
+run_synthesis
+```
+
 ![221a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/238e5752-92c5-45fd-b7d8-2f5e6895d77c)
+#### *Synthesis was successful:*
 ![221](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2ad91ca3-df41-46af-93c0-b11e3ae104f9)
+
+```tcl
+
+init_floorplan
+place_io
+tap_decap_or
+```
+```tcl
 ![222](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8f7661b4-f0af-4f39-979f-3e2716ec4edc)
+```tcl
+run_placement
+
+run_cts
+```
 ![223](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5b0adcd1-811f-412f-a629-2c6840d87c6e)
+#### *Placement  was successful:*
 ![224](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e21377a8-2788-463c-bd9d-aecb1348e5b3)
 ![225](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/64702e87-5e95-433f-9394-a52ab46b4f46)
 ![226](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a711589d-bfac-489c-9b41-0f08df2a4f90)

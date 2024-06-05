@@ -640,7 +640,7 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![151](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/28c09e11-f566-4be6-ba34-da89f2b2ffe8)
 
 ![152](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6065db19-d7b6-4ffa-951d-3ed01a9f89bc)
-** Determining unit distance in a layout grid **
+**Determining unit distance in a layout grid**
 ![153](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c3476735-ed6e-4416-a71e-81dbd24d06ee)
 **Commands to run in tkcon window:**
 
@@ -655,9 +655,9 @@ ex2spice
 ```
 
 ![154](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6092c3a0-1541-4525-a96b-393d46fed15a)
-** SPIC3 file created from sky130_inv.ext **
+**SPIC3 file created from sky130_inv.ext**
 ![155](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03d24991-9a09-4bec-9c77-b1bb3920609c)
-** Modified SPIC3 file **
+**Modified SPIC3 file**
 ![156](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/07ba14bc-9010-4d2d-a927-02670e4a55fa)
 #### Post layout ngspice simulations:
 ![157](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/14ecda51-4ec6-4cfe-839c-c0535c7cd0dc)

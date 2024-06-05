@@ -699,19 +699,100 @@ cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/
 ![198](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9bdeab41-5fe6-4438-a3f4-81206ff9734e)
 ![199](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ff3a1fb4-0c83-4604-9ef3-e9e3cf12873e)
 ![200](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2e6fde51-1fce-41de-97a0-f41e3e4da7c5)
-![201](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2ab96628-fb23-46bc-b6e6-fb6864d66aff)
+*Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow:*
 
+```tcl
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+```
+Edited config.tcl to include the new 'lef' file and updated the library paths to the ones added in the 'src' directory.
+![201](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2ab96628-fb23-46bc-b6e6-fb6864d66aff)
+*Run openlane flow synthesis with newly inserted custom inverter cell:*
+
+Commands to initiate the OpenLANE flow, incorporating the new lef file and performing synthesis.
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+```
+```tcl
+./flow.tcl -interactive
+
+package require openlane 0.9
+
+prep -design picorv32a
+
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+run_synthesis
+```
 ![202](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d7f689ac-fd13-4875-87c4-49cf00d931b3)
 ![203](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3a051aa0-bd86-48ac-b92a-2a8241394a45)
 ![204](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d6e056c9-4d01-4160-9f39-44ea2faaa140)
 ![205](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e916aa5d-896d-40d5-8c6b-3f27cef60fe1)
+Commands to view and change parameters to improve timing and run synthesis
+
+```tcl
+
+prep -design picorv32a -tag 31-05_11-50 -overwrite
+
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+echo $::env(SYNTH_STRATEGY)
+
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+echo $::env(SYNTH_BUFFERING)
+
+echo $::env(SYNTH_SIZING)
+
+set ::env(SYNTH_SIZING) 1
+
+echo $::env(SYNTH_DRIVING_CELL)
+
+run_synthesis
+```
 ![206](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/795c4510-b20d-426f-a97f-8323cdc9e532)
 ![207](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d3d9e86a-adcb-4b35-97a1-ff5f8e43391b)
+*Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow:*
+```tcl
+init_floorplan
+place_io
+tap_decap_or
+```
 ![208](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1070323e-5e22-4b6c-ba3e-ff76d429bb07)
+
+*With the floorplan completed, we can proceed to placement using the following command:*
+
+```tcl
+run_placement
+```
 ![209](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/473e9189-a1f9-499f-b431-0b92d06d1b3d)
+Commands to load placement def in magic in another terminal
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03/results/placement/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
 ![210](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/22827b9b-fde8-483b-9f9c-15ba808b3b4c)
 ![211](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/448868e7-c4be-4896-a192-c4f2a719edcd)
+*A custom inverter has been inserted into the placement DEF with proper abutment:*
 ![212](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3c35d575-119e-499a-9705-d6ec002daab0)
+*To view the internal layers of cells, use the command for opening the Tkcon window:*
+
+```tcl
+expand
+```
+
+
+*The alignment of power pins with other cells from the library is distinctly visible, ensuring proper abutment:*
 ![213](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/76e3100c-2fdb-4334-b993-a0d634ff50bc)
 ![214](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/da912964-3cc5-4315-a745-c699b0ab4c54)
 

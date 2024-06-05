@@ -195,25 +195,47 @@ The deviation in voltage, denoted as Vdd', from the ideal logic 1 voltage (1 vol
 ![42](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/dcc0ae04-3765-4378-ba77-0952cf21d3b3)
 To address the voltage drop issue and ensure stable operation of the circuit, a decoupling capacitor (Cd) is introduced in parallel with the circuit. This capacitor serves as a reservoir of charge, providing the necessary current to the circuit during switching operations. When the circuit switches, it draws current from Cd, mitigating the voltage drop across the RL network. The RL network, in turn, replenishes the charge in Cd to maintain its voltage level. Additionally, when Cd discharges, it takes charge from the power supply to recharge itself, ensuring a continuous and stable supply of current to the circuit. By effectively managing the charge and discharge cycles of the decoupling capacitor, the voltage drop issue can be mitigated, enhancing the reliability and performance of the circuit.
 ![43](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/562d1671-62d6-482a-b3ed-7b98cc8d0959)
-
+Within the chip layout, the strategic placement of decoupling capacitors between Block A, Block B, and Block C ensures a stable and continuous power supply for each block. This arrangement effectively manages local communication within the blocks, mitigating voltage drops and ensuring reliable operation. By integrating decoupling capacitors in this manner, the overall performance and stability of the chip design are enhanced.
 ![44](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5f6cae0a-1b46-4110-af2b-d8487968207b)
-
+### Power planning
+Let's take a closer look at the local circuitry, treating it as a black box with repeatable logic at its boundaries. Thanks to the integration of decoupling capacitors, the issue of current demand has been effectively resolved. Now, as signals transition from logic 0 to logic 1 and propagate from the driver to the load, it's crucial to maintain signal integrity along specific driver-to-load lines. With the power supply now activated, ensuring reliable signal transmission across the 16-bit bus becomes paramount. However, due to physical constraints, decoupling capacitors cannot be placed directly at the bus. This presents a challenge, as the power supply and the bus are positioned at a distance, leading to an anticipated voltage drop between them.
 ![45](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/349e52ca-5592-4105-bc45-99dff960fad1)
-
+Consider a specific 16-bit bus line where a logic 1 signal indicates that the capacitor is charging to Vdd, while a logic 0 signal indicates discharge to ground. Now, let's examine this bus line connected to an inverter. With the inverter's operation, the capacitors initially charged will discharge, and vice versa. This reversal happens as the inverter alters the logic level of the signals on the bus line, thereby changing the state of each capacitor accordingly.
 ![46](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/4a5ebd30-a6e5-4271-b9f7-71c8912cbc3d)
-
+The issue arises because each capacitor is connected to a single ground point. When discharge occurs, the "ground" tap point becomes uneven, resulting in a phenomenon known as "ground bounce." This bounce may cause the voltage to enter an indeterminate state, transitioning between logic 1 and logic 0 if its magnitude exceeds the noise margin level. Consequently, unpredictability arises, leading to uncertain outcomes in the circuit's behavior.
 ![47](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1a46add3-bac1-4170-b916-199b6db93886)
-
+Furthermore, with a single "Vdd" tap point, all capacitors previously at "0" volts need to be charged to "V" volts. This charging process causes a drop in voltage at the Vdd tap point. As long as this voltage drop remains within the noise margin threshold, the system operates normally. However, if the drop exceeds this threshold and enters an unknown region, the behavior of the circuit becomes unpredictable.
 ![48](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/23f29ef8-7467-4b26-a579-8c7a3661c7a7)
 
+The observed phenomena, characterized by a drop in supply voltage, stems from the concentration of electricity at a single point. The solution to this issue lies in employing multiple power supplies. By doing so, each block can draw power from the nearest power source and discharge it to the nearest ground. This distribution of power and ground connections forms a mesh topology, ensuring more uniform and efficient power distribution throughout the circuit.
 ![49](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9861c48a-3397-4517-b77c-f9448502c859)
-
+*The power planning for the top view is depicted below:*
 ![50](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d04dab76-87a4-49cf-9f59-407e2e9d2e9e)
+## Pin placement 
+
+Let's consider the following designs for implementation. The first circuit is driven by clk1, while the second circuit is driven by clk2. Both circuits have different inputs, Din1 and Din2 respectively, and outputs Dout1 and Dout2. Additionally, we have some preplaced cells, such as Block A, which receives inputs from Din1 and Din2, processes them, and provides an output to one of the inputs of the combinational gates. Another preplaced cell, Block B, receives inputs from clk1 and clk2 and generates a clk output. So, in total, we have 4 input ports: Din1, Din2, Clk1, and Clk2, and 3 output ports: Dout1, ClkOut, and Dout2. This setup serves as the circuit for explaining the concepts of placement and routing.
 
 ![51](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fb0a99e6-e5b7-4ded-9906-320d5d0da83f)
+- Let's introduce another design that needs to be implemented. This section includes FF1 and FF2, highlighted in a different color (blue). FF1 is driven by Din3 and Clk1 as inputs, while the clock port of FF2 is clk2. Such circuits are particularly useful for understanding the timing analysis of inter-clock scenarios, where two flip-flops are driven by different clock inputs.
+
+- Now, let's incorporate one more design, represented by FF1 and FF2 highlighted in a different color (green). In this configuration, FF1 is driven by Din4 and Clk2 as inputs, while the clock port of FF2 is clk1. This setup also helps in exploring timing analysis, specifically for inter-clock scenarios.
+
+- Thus, in total, we now have 2 input ports: Din3 and Din4, and 3 output ports: Dout3, ClkOut, and Dout4. Additionally, we have some preplaced cells and Block C, which receives inputs from Din3 and Din4, processes them, and provides an output to one of the inputs of the combinational gates.
 
 ![52](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d95e2479-7228-490a-bc8a-289c55c5875d)
+The completed design now consists of 6 input ports and 5 output ports. The connectivity information between the gates is encoded using VHDL/Verilog language and is referred to as the 'Netlist'. Below is a summary of the design:
+*Input Ports:*
+Din1, Din2, Clk1, Clk2, Din3 & Din4 
+*Output Ports:*
+Dout1, Dout2, Dout3, ClkOut, Dout4
+The netlist describes how these input and output ports are connected to the various gates and flip-flops within the design, defining the interconnections and logic functionality of the entire circuit.
 
+Let's proceed with placing the netlist into the core design that we have previously created. We'll then fill the empty area between the core and the die with pin information. This process involves collaboration between the frontend team, responsible for determining the netlist connectivity, and the backend team, responsible for pin placements. Based on the pin placements, preplaced blocks should be located closer to the inputs of the preplaced blocks for optimal performance.
+
+It's important to note that clock-in and clock-out pins are typically larger in size compared to data ports (input and output pins). This size difference is due to the critical nature of clock signals. Input clocks continuously provide signals to all elements of the chip, while output clocks need to propagate signals as quickly as possible. Therefore, larger-sized clock pins are preferred to minimize resistance and ensure efficient signal transmission.
+Another critical consideration is the blocking of the pin placement area for routing and cell placements. Logical cell placement blockage is necessary to ensure that this area remains reserved exclusively for pin placement and is not occupied by routing or cell placement activities. This blockage is depicted in the floor plan image provided, delineating the space between the pins for exclusive pin placement purposes.
+
+With these preparations completed, the floor plan is now ready for the Placement and Routing step of the design process. This step involves placing the logic cells and routing connections according to the established floor plan, ensuring efficient signal flow and optimal performance of the chip design.
 ![53](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6e1749f2-6dd2-4295-9b02-d7ca891fc71d)
 
 

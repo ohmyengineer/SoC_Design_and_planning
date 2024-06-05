@@ -708,6 +708,40 @@ Voltages at 20% and 80% of maximum voltage:
 
 
 ## Day 5-Final steps for RTL2GDS using tritonRoute and openSTA
+*Perform generation of Power Distribution Network (PDN) and explore the PDN layout:*
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+docker
+```
+```tcl
+
+./flow.tcl -interactive
+
+package require openlane 0.9
+
+prep -design picorv32a
+
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+
+set ::env(SYNTH_SIZING) 1
+
+run_synthesis
+
+init_floorplan
+place_io
+tap_decap_or
+
+run_placement
+
+run_cts
+
+gen_pdn 
+```
 ![229](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a4955daf-e730-4651-b5f0-df224d6335a2)
 ![230](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/4c0fdd6a-7334-43b4-bfdb-1440d7223fd2)
 ![231](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3d8769d8-d792-406e-9d6f-d24f2ca7f519)

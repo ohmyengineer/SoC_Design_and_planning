@@ -352,17 +352,27 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![68](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/538d02d8-0ecb-4e34-8235-4d49a5e42edb)
 *Standard cells are placed in accordance with legal standards to ensure compliance with design regulations and constraints:*
 ![69](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03b24ff7-4ddc-4996-b707-c6333dd3a275)
+## Inputs for cell design flow:
 
+In the cell design flow, components like gates, flip-flops, and buffers are termed "standard cells." These are pre-defined units representing specific logic functions or storage elements in integrated circuit design. Standard cells are optimized for performance, power, and area, facilitating efficient design implementation.
 ![70](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/85d7cfb0-83de-48a3-a749-c39e641f45cf)
 
+Standard cells, including gates, flip-flops, and buffers, are housed within a section known as the "Library" in the IC design flow. Similar to a traditional library storing various types of books, the IC design library contains different standard cells tailored for specific logic functions. Moreover, within the library, variations in cell sizes are categorized based on their drive strength. These varying sizes cater to different design requirements and performance considerations. Furthermore, the library encompasses cells with diverse functionalities, sizes, and threshold voltages, offering designers a range of options to optimize their designs.
 ![71](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6f8a2d83-121c-444b-a136-82603b3d0c75)
+When delving into the design process of an inverter from the library, the cell design flow typically comprises three main segments: Inputs, Design Steps, and Outputs.
 
+In the Inputs stage, specifications such as shape representation, drive strength, power characteristics, and other design parameters are defined. These inputs provide the foundation for the subsequent design steps.
+
+The Design Steps phase involves the actual creation and refinement of the inverter. This includes tasks such as layout design, circuit simulation, optimization, and verification. Each step is meticulously executed to ensure the final design meets the specified requirements.
+
+Finally, in the Outputs stage, the completed inverter design is generated. This includes the layout of the inverter, simulation results, timing analysis data, and any other relevant output information. These outputs serve as the deliverables of the cell design process, ready for integration into larger IC designs.
 ![72](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/904a6acf-7cea-483e-88b4-ee106955f7c5)
-
+*Inputs:* Essential inputs for cell design include Process Design Kits (PDKs), DRC and LVS rules, SPICE models, libraries, and user-defined specifications. PDKs provide fabrication process details, while DRC and LVS rules ensure design compliance. SPICE models offer insight into transistor behavior, crucial for accurate circuit simulation. These inputs collectively guide the design process, enabling the creation of robust cell designs.
 ![73](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/00c21afc-e901-43e8-aaf0-1246ee8fc4d8)
 
 ![74](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/92ac81f0-1048-4af1-a1ee-816c9ddf211a)
-
+### *Circuit design steps:* 
+*Design Steps:* The design process unfolds in three main steps: circuit design, layout design, and characterization. Within circuit design, the process commences with implementing the desired function. This is followed by modeling the PMOS and NMOS transistors to conform to the library standards. Cell height is determined by the separation between the power and ground rails, while cell width is influenced by factors such as timing, drive strength, supply voltage, and metal layers. These parameters collectively guide the design specifications and inform subsequent design stages.
 ![75](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cf4d6357-96c7-419b-9b88-7e925211e8db)
 
 ![76](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0503f9e1-0509-447f-8310-45a6eec3d69c)

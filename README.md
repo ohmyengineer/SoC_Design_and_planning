@@ -123,7 +123,29 @@ Total \ Area=2+1+1=4 sq. units
 
 
 ![34](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/10b02ad8-ee0d-49d9-84da-3413620bded6)
+Consider a silicon wafer where the logic circuits are implemented. The small square within the silicon wafer is known as the Die. Inside the Die, there is a section called the Core.
+*Placement of Logic Inside the Core*
+Now, let's place the specific logic inside the Core. Given that the netlist will occupy the entire area of the Core, it implies a 100% utilization of the Core. From this, we can calculate the utilization factor.
+*Utilization Factor Calculation*
+The utilization factor is defined as the ratio of the area occupied by the logic to the total area of the Core.
+```math
+Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
+```
 
+Given:
+- The total area occupied by the netlist (logic) is 4 square units (as calculated earlier).
+- Assume the Core's total area is exactly 4 square units to match the logic placement for 100% utilization.
+*Utilization Factor*
+```math
+Utilization\ Factor = \frac{Area\ Occupied\ by\ Logic}{Total\ Area\ of\ Core}×100%
+```
+```math
+Utilization\ Factor = \frac{4 sq.\ units}{4 sq.\ units}
+```
+```math
+Utilization\ Factor=1×100%\=100%
+```
+Thus, the utilization factor is 100%, indicating that the logic completely occupies the Core area
 ![35](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9717b790-f6ca-4d1a-bb0c-c0c9ba725ea1)
 
 ![36](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8980382e-5e48-4b4a-a114-95200cb92f78)

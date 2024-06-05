@@ -661,15 +661,41 @@ Voltages at 20% and 80% of maximum voltage:
 ![192](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/10d68e72-5119-43a5-a8e3-4944b098ccd0)
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree
+*Commands to open the custom inverter layout:*
 
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+
+magic -T sky130A.tech sky130_inv.mag &
+```
 ![193](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c2914292-f787-4eed-9b61-a9969aad4f60)
 ![194a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03aaba6e-e8c6-417d-9c3c-cc6a05e606d6)
+
+*Commands for tkcon window to set grid as tracks of locali layer:*
+
+```tcl
+help grid
+
+grid 0.46um 0.34um 0.23um 0.17um
+```
 ![194](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/33bd3aef-01d4-43f8-9c80-8fd1a2dbf318)
 
 
 ![195](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/108f737f-10be-4120-952b-f9ade09cd5e1)
+
+*Command for tkcon window to write lef:*
+```tcl
+lef write
+```
 ![196](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/474fb9dc-7a8d-4dc5-b1c9-6d1e90995441)
+*Newly generated lef file:*
 ![197](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/758c6a4e-768b-466b-990c-2b45974a19a5)
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+
+cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+
+```
 ![198](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9bdeab41-5fe6-4438-a3f4-81206ff9734e)
 ![199](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ff3a1fb4-0c83-4604-9ef3-e9e3cf12873e)
 ![200](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2e6fde51-1fce-41de-97a0-f41e3e4da7c5)

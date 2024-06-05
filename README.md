@@ -88,15 +88,31 @@ Percentage\ of\ DFF's = 0.108429685 * 100 = 10.84296854\ \%
 
 ![28](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/01ce9f90-f8b7-4b44-a85f-4479d755ad1f)
 ```math
-Chip\ Area\ for\ Module = 147712.918400 unit
+Chip\ Area\ for\ Module = 147712.918400 sq. unit
 ```
 
 ## Day 2-Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
 ### Define Width and Height of Core and Die
 ![29](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55a63d32-ba1d-4fa5-afba-57585c3ce2a8)
-
+Consider two flip-flops: a launch flop and a capture flop, with simple combinational logic between them. A netlist outlines the connections among all components in an electronic design. Here, we depend on the sizes of the logic gates (AND & OR) and the specific flip-flops used.
 ![30](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8b42c546-aabb-4547-8f43-fdda11703c9c)
-
+To convert the symbols into physical dimensions and calculate the area occupied by the netlist on a silicon wafer, we'll consider the following:
+- Standard Cell Dimensions: Each standard cell has dimensions of 1 unit x 1 unit, resulting in an area of 1 square unit.
+- Flip-Flop Dimensions: Each flip-flop also has an area of 1 square unit.
+Now, let's assume the netlist includes:
+- 2 flip-flops (launch and capture).
+Combinational logic gates (AND, OR) in between.
+- For simplicity, let's assume:
+- There are 1 AND gates and 1 OR gates in the combinational logic.
+```math
+  Total Area=(Number of Flip-Flops×Area of Each Flip-Flop)+(Number of AND Gates×Area of Each AND Gate)+(Number of OR Gates×Area of Each OR Gate)
+```
+```math
+Total Area=(2×1 sq. unit)+(1×1 sq. unit)+(1×1 sq. unit)
+```
+```math
+Total Area=2+1+1=4 sq. units
+```
 ![32](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f90d020a-500d-4888-be5c-ec9464620987)
 
 ![33](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5e3e61f4-5852-42ec-a186-b8c964909526)

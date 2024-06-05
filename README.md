@@ -374,29 +374,35 @@ Finally, in the Outputs stage, the completed inverter design is generated. This 
 ### *Circuit design steps:* 
 *Design Steps:* The design process unfolds in three main steps: circuit design, layout design, and characterization. Within circuit design, the process commences with implementing the desired function. This is followed by modeling the PMOS and NMOS transistors to conform to the library standards. Cell height is determined by the separation between the power and ground rails, while cell width is influenced by factors such as timing, drive strength, supply voltage, and metal layers. These parameters collectively guide the design specifications and inform subsequent design stages.
 ![75](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cf4d6357-96c7-419b-9b88-7e925211e8db)
-
+*Euler path:* An Euler path is a sequence of edges in a graph that connects all the vertices, visiting each edge exactly once.
 ![76](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0503f9e1-0509-447f-8310-45a6eec3d69c)
 
 ![77](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2cccad14-3901-4f84-a86e-729a4d60a7ed)
 
 ![78](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/33ebce2e-52cb-4467-a391-eb05ae4e7964)
-
+The subsequent stage involves transforming the stick diagram into a conventional layout, ensuring adherence to the appropriate design rules discussed earlier. Upon obtaining the finalized layout, various parameters such as cell length, width, pin placements, and drain current are determined. This process ensures that the layout meets the required specifications and design constraints, facilitating the accurate fabrication of the integrated circuit.
+### *Layout Design:*
 ![79](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bab11107-65d9-4bcb-bda4-f33d7f0d983e)
-
+The characterization flow begins by reading the model and the extracted SPICE netlist. Subsequently, the behavior of the buffer is defined or recognized, followed by the reading of the subcircuits of the inverter. Once these initial steps are completed, the required power supplies are connected, and the stimulus is applied to the circuit. Additionally, the output capacitance is provided to ensure accurate simulation results. Finally, the necessary simulation commands are issued, such as ".trans" for transient simulation or ".dc" for DC simulation, depending on the type of analysis being performed. This comprehensive approach ensures that the circuit is accurately characterized and validated for its intended functionality.
 ![80](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c4db52c8-e252-4e28-94c8-718b93b9171e)
+The typical outputs obtained from circuit design include a Circuit Description Language (CDL) file, GDSII file, LEF file, and an extracted SPICE netlist (.cir).
 
+
+### Timing threshold definitions: 
+As seen in the previous section, a series of inverters are interconnected alongside power sources and stimulus inputs, forming the foundation for the concept of "timing threshold definitions." These definitions delineate critical threshold points within waveforms. In the provided figure, 'Slew_low_rise-thr' signifies a value proximal to zero, typically set at 20%, albeit sometimes at 30%. This parameter crucially impacts waveform transition characteristics, exerting a significant influence on overall circuit timing behavior.
 ![81](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fc6596cd-5e87-489f-9c3d-228165972aa7)
 
+Now, by examining the waveform of the input stimulus, which serves as the input to the initial buffer, alongside the output of the first buffer, we can identify thresholds for delay analysis. Similar to slew thresholds, delay thresholds are determined by selecting specific rise and fall points from the waveforms. These thresholds typically correspond to approximately 50% of the signal's amplitude. By pinpointing these critical points, we gain insight into the delay characteristics of the circuit, facilitating comprehensive timing analysis and optimization.
 ![82](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/92f7fcd0-9124-4869-a3f8-aac28c345fd2)
 
 ![83](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e331b3d3-335e-41fb-b793-98927312bcaf)
-
+### *Propagation delay and transition time:*
+The values mentioned serve as pivotal references for computing parameters like propagation latency, current, and signal swings. Calculating delay involves subtracting the out_rise_thr from the in_rise_thr, typically set at 50%. This formula, Time delay = Time(out_thr) - Time(in_thr), provides a straightforward method to gauge the time delay between threshold points in the waveform. Such analysis offers crucial insights into circuit performance, aiding in optimization and troubleshooting efforts.
 ![84](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ddcf5431-f789-4e26-9441-c01a2394309c)
-
+In the provided example, a consistent threshold of 50% was maintained for both in_rise_thr and out_fall_thr. However, negative delays are prohibited when the threshold point rises, and the output precedes the input. Thus, careful selection of the threshold point is imperative, as it directly influences the possibility of negative delays. This consideration underscores the importance of meticulous threshold determination to avoid such discrepancies in delay analysis
 ![85](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e8ac6337-9473-420d-9b79-d1afb3a6cfcb)
-
+Transition time, a crucial parameter in waveform analysis, is determined by subtracting the time at the slew_high_rise_thr from the time at the slew_low_rise_thr, or alternatively, by subtracting the time at the slew_high_fall_thr from the time at the slew_low_fall_thr. These calculations enable us to quantify the duration of signal transitions within a waveform, providing essential insights into circuit behavior. Let's examine a waveform to illustrate the process of slew calculation.
 ![86](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7b7c732a-e819-425b-b8b1-3918c907f79e)
-
 ![87](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fdffcc49-8a7e-40f5-a8fc-9b9b260c23ba)
 
 
@@ -406,7 +412,7 @@ Finally, in the Outputs stage, the completed inverter design is generated. This 
 
 
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
-
+### SPICE deck creation for CMOS inverter:
 ![88](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b0cb042d-44cb-4213-ad43-b918d603535b)
 
 ![89](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0c1d1b38-075d-4ad9-8ccc-1f5d111c5d9f)

@@ -1130,5 +1130,5 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 ### Contact
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harshitsharmavlsi/)
-[![email](https://img.shields.io/badge/email-DIRECTEMAIL?style=for-the-badge&logo=gmail&logoColor=white)](mailto:18bt0104246semece@gmail.com)
 
+[![email](https://img.shields.io/badge/email-CONTACTEMAIL?style=for-the-badge&logo=gmail&logoColor=white)](mailto:18bt0104246semece@gmail.com)

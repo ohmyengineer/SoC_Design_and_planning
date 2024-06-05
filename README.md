@@ -415,6 +415,46 @@ Transition time, a crucial parameter in waveform analysis, is determined by subt
 
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
 ### SPICE deck creation for CMOS inverter:
+#### IO placer revision:
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/configuration/
+
+ls
+
+less floorplan.tcl
+```
+
+![IO 1](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/36f68883-60e3-4313-a094-b9f96807db92)
+** floorplan.tcl file **
+![IO 2](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/20fdc3d3-dba0-4b26-b257-05a6608e7aa2)
+```tcl
+set ::env(FP_IO_MODE) 2
+```
+
+
+![IO 3](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/dffd5b1a-7965-458c-9fad-ab174de42b63)
+
+```tcl
+init_floorplan
+
+place_io
+
+tap_decap_or
+```
+
+![IO 4](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a24e3685-7eca-4557-ac22-b1c36ecc2a16)
+![IO 5](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3a95e087-db71-4b13-957a-156644930200)
+![IO 6](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3f4c5da1-f6be-4ca5-bf96-ffceb2fb5e24)
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/floorplan/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+
+```
+![IO 7](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1b9e27db-6588-47df-aff0-31a18222b8c4)
+![IO 8](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a40e7aa1-dfb0-4dbd-9729-434659c3b3d4)
+
 **VTC-SPICE simulations:** VTC-SPICE simulations commence with the generation of a SPICE deck, akin to a netlist, containing essential connectivity information. This deck includes specific points designated for output and input connections required for the simulation.
 
 **Component connectivity:** Component connectivityplays a crucial role in this process, necessitating the provision of substrate pin connections. Adjustments to the threshold voltages of PMOS and NMOS components are facilitated through the substrate pin connection. This step ensures accurate modeling and simulation of component behavior within the circuit.

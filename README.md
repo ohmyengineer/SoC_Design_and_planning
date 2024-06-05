@@ -104,14 +104,18 @@ Now, let's assume the netlist includes:
 Combinational logic gates (AND, OR) in between.
 - For simplicity, let's assume:
 - There are 1 AND gates and 1 OR gates in the combinational logic.
+Components and Their Areas:
+- Flip-Flops: 2 (launch and capture), each with an area of 1 square unit.
+- AND Gate: 1, with an area of 1 square unit.
+- OR Gate: 1, with an area of 1 square unit.
 ```math
-  Total Area=(Number of Flip-Flops×Area of Each Flip-Flop)+(Number of AND Gates×Area of Each AND Gate)+(Number of OR Gates×Area of Each OR Gate)
+  Total\ Area=(Number\  of\ FFs\ ×Area\ of\ Each\ FF\)+(Number\ of\ AND\ Gates\×Area\ of\ Each\ AND\ Gate\)+(Number\ of\ OR\ Gates\×Area\ of\ Each\ OR\ Gate)
 ```
 ```math
-Total Area=(2×1 sq. unit)+(1×1 sq. unit)+(1×1 sq. unit)
+Total \ Area=(2×1 sq. unit)\+(1×1 sq. unit)+(1×1 sq. unit)
 ```
 ```math
-Total Area=2+1+1=4 sq. units
+Total \ Area=2+1+1=4 sq. units
 ```
 ![32](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f90d020a-500d-4888-be5c-ec9464620987)
 

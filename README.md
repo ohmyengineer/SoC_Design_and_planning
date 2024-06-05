@@ -821,7 +821,7 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 ![249](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/719bfa90-6681-4730-9689-7e992587b8b2)
 ![250](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fe2dbabe-0169-4b9c-9405-c52f56add230)
 ![251](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/300f0045-323f-4113-bf40-c47526757e4f)
-### Final generated layout of the complete RTL-to-GDSII flow using OpenLane:
+### *Final generated layout of the complete RTL-to-GDSII flow using OpenLane:*
 ![252](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/14c78ec9-a893-44cb-8391-d9772d71d950)
 
 

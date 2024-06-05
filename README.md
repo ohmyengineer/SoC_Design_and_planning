@@ -1,4 +1,4 @@
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)]([https://www.linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/harshitsharmavlsi/))
+
 # SoC_Design_and_planning
 In this repository, I've curated a collection of assignments completed during the VSD SoC Design and Planning workshop. Each assignment explores different facets of System-on-Chip (SoC) design, covering topics such as architecture, RTL design, synthesis, floorplanning, power planning, pin placement, library creation, placement algorithms, cell design, circuitry fundamentals, layout design, timing analysis, DRC rules, STA methodologies, clock tree synthesis, power distribution networks, and routing techniques. Delve into these assignments to gain valuable insights and practical knowledge in the exciting field of SoC design.
 
@@ -1128,4 +1128,4 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 * Video lectures from the workshop
 
 
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)]([https://www.linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/harshitsharmavlsi/))

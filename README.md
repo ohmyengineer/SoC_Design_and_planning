@@ -724,11 +724,42 @@ drc why
 *Inserted new commands in sky130A.tech file to update DRC:*
 ![185](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/86306eae-5209-4fe4-b0b7-6b1560bc488d)
 ![186](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/072a12e9-b6a4-45b4-bf03-e9bf083d9b4d)
+*Commands to run in tkcon window:*
+```tcl
+tech load sky130A.tech
+
+drc check
+
+drc why
+
+clear
+
+cif ostyle drc
+
+cif see dnwell_shrink
+
+feed clear
+
+cif see nwell_missing
+
+feed clear
+```
 ![187](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/24ddcec4-ce37-4071-a40e-0e793432a167)
 ![188](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cdd1e8cf-7a02-48c9-9ff0-fc026ebd350b)
 ![189](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bf1e0997-c90e-4828-b0eb-950d2471117a)
 ![190](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/16fbe121-e4f9-4832-9482-38ff78979fae)
 ![191](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f34d40f6-dc6c-4cd3-896b-3898f77e1332)
+*Commands to run in tkcon window:*
+```tcl
+tech load sky130A.tech
+
+drc style drc(full)
+
+drc check
+
+drc why
+```
+
 ![192](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/10d68e72-5119-43a5-a8e3-4944b098ccd0)
 
 ## Day 4-Pre-layout timing analysis and importance of good clock tree

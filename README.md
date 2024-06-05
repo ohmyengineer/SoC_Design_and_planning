@@ -215,14 +215,12 @@ The observed phenomena, characterized by a drop in supply voltage, stems from th
 
 Let's consider the following designs for implementation. The first circuit is driven by clk1, while the second circuit is driven by clk2. Both circuits have different inputs, Din1 and Din2 respectively, and outputs Dout1 and Dout2. Additionally, we have some preplaced cells, such as Block A, which receives inputs from Din1 and Din2, processes them, and provides an output to one of the inputs of the combinational gates. Another preplaced cell, Block B, receives inputs from clk1 and clk2 and generates a clk output. So, in total, we have 4 input ports: Din1, Din2, Clk1, and Clk2, and 3 output ports: Dout1, ClkOut, and Dout2. This setup serves as the circuit for explaining the concepts of placement and routing.
 
-![51](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fb0a99e6-e5b7-4ded-9906-320d5d0da83f)
 - Let's introduce another design that needs to be implemented. This section includes FF1 and FF2, highlighted in a different color (blue). FF1 is driven by Din3 and Clk1 as inputs, while the clock port of FF2 is clk2. Such circuits are particularly useful for understanding the timing analysis of inter-clock scenarios, where two flip-flops are driven by different clock inputs.
 
 - Now, let's incorporate one more design, represented by FF1 and FF2 highlighted in a different color (green). In this configuration, FF1 is driven by Din4 and Clk2 as inputs, while the clock port of FF2 is clk1. This setup also helps in exploring timing analysis, specifically for inter-clock scenarios.
 
 - Thus, in total, we now have 2 input ports: Din3 and Din4, and 3 output ports: Dout3, ClkOut, and Dout4. Additionally, we have some preplaced cells and Block C, which receives inputs from Din3 and Din4, processes them, and provides an output to one of the inputs of the combinational gates.
-
-![52](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d95e2479-7228-490a-bc8a-289c55c5875d)
+![51](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fb0a99e6-e5b7-4ded-9906-320d5d0da83f)
 The completed design now consists of 6 input ports and 5 output ports. The connectivity information between the gates is encoded using VHDL/Verilog language and is referred to as the 'Netlist'. Below is a summary of the design:
 *Input Ports:*
 Din1, Din2, Clk1, Clk2, Din3 & Din4 
@@ -230,9 +228,13 @@ Din1, Din2, Clk1, Clk2, Din3 & Din4
 Dout1, Dout2, Dout3, ClkOut, Dout4
 The netlist describes how these input and output ports are connected to the various gates and flip-flops within the design, defining the interconnections and logic functionality of the entire circuit.
 
-Let's proceed with placing the netlist into the core design that we have previously created. We'll then fill the empty area between the core and the die with pin information. This process involves collaboration between the frontend team, responsible for determining the netlist connectivity, and the backend team, responsible for pin placements. Based on the pin placements, preplaced blocks should be located closer to the inputs of the preplaced blocks for optimal performance.
+- Let's proceed with placing the netlist into the core design that we have previously created. We'll then fill the empty area between the core and the die with pin information. This process involves collaboration between the frontend team, responsible for determining the netlist connectivity, and the backend team, responsible for pin placements. Based on the pin placements, preplaced blocks should be located closer to the inputs of the preplaced blocks for optimal performance.
 
 It's important to note that clock-in and clock-out pins are typically larger in size compared to data ports (input and output pins). This size difference is due to the critical nature of clock signals. Input clocks continuously provide signals to all elements of the chip, while output clocks need to propagate signals as quickly as possible. Therefore, larger-sized clock pins are preferred to minimize resistance and ensure efficient signal transmission.
+![52](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d95e2479-7228-490a-bc8a-289c55c5875d)
+
+
+
 Another critical consideration is the blocking of the pin placement area for routing and cell placements. Logical cell placement blockage is necessary to ensure that this area remains reserved exclusively for pin placement and is not occupied by routing or cell placement activities. This blockage is depicted in the floor plan image provided, delineating the space between the pins for exclusive pin placement purposes.
 
 With these preparations completed, the floor plan is now ready for the Placement and Routing step of the design process. This step involves placing the logic cells and routing connections according to the established floor plan, ensuring efficient signal flow and optimal performance of the chip design.

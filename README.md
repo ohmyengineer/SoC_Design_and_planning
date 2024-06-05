@@ -109,7 +109,7 @@ Components and Their Areas:
 - AND Gate: 1, with an area of 1 square unit.
 - OR Gate: 1, with an area of 1 square unit.
 ```math
-  Total\ Area=(Number\  of\ FFs\ ×Area\ of\ Each\ FF\)+(Number\ of\ AND\ Gates\×Area\ of\ Each\ AND\ Gate\)+(Number\ of\ OR\ Gates\×Area\ of\ Each\ OR\ Gate)
+  Total\ Area= (Number\  of\ FFs ×Area\ of\ Each\ FF)+(Number\ of\ AND\ Gates×Area\ of\ Each\ AND\ Gate)+(Number\ of\ OR\ Gates×Area\ of\ Each\ OR\ Gate)
 ```
 ```math
 Total \ Area=(2×1 sq. unit)\+(1×1 sq. unit)+(1×1 sq. unit)
@@ -129,7 +129,7 @@ Now, let's place the specific logic inside the Core. Given that the netlist will
 *Utilization Factor Calculation*
 The utilization factor is defined as the ratio of the area occupied by the logic to the total area of the Core.
 ```math
-Flop\ Ratio = \frac{Number\ of\ D\ Flip\ Flops}{Total\ Number\ of\ Cells}
+Utilization\ Factor = \frac{Area\ Occupied\ by\ Logic}{Total\ Area\ of\ Core}
 ```
 
 Given:
@@ -137,15 +137,22 @@ Given:
 - Assume the Core's total area is exactly 4 square units to match the logic placement for 100% utilization.
 *Utilization Factor*
 ```math
-Utilization\ Factor = \frac{Area\ Occupied\ by\ Logic}{Total\ Area\ of\ Core}×100%
-```
-```math
+
 Utilization\ Factor = \frac{4 sq.\ units}{4 sq.\ units}
 ```
 ```math
-Utilization\ Factor=1×100%\=100%
+Utilization\ Factor=1×100%=100%
 ```
 Thus, the utilization factor is 100%, indicating that the logic completely occupies the Core area
+*Aspect Ratio*
+The aspect ratio is defined as the ratio of the width to the height of a rectangular area. 
+Core is a square with each side being 2 units
+```math
+Aspect\ Ratio\ of\ Core = \frac{Width}{Height}
+```
+```math
+Aspect\ Ratio\ of\ Core = \frac{2}{2} = 1
+```
 ![35](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9717b790-f6ca-4d1a-bb0c-c0c9ba725ea1)
 
 ![36](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8980382e-5e48-4b4a-a114-95200cb92f78)

@@ -501,7 +501,8 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 
 ![107](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1766493b-e779-4585-a9ef-260538451bb0)
 
-![108](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d4d2027e-80aa-45ec-bb58-fc015d40b455)
+![108](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/29af13b8-bac9-4608-a1c4-33500103bb4d)
+
 **3) N-well and P-well Formation:**
 ![109](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e64293ef-68c7-4ff6-b311-6d49cb0b66ec)
 

@@ -92,7 +92,7 @@ Chip\ Area\ for\ Module = 147712.918400 sq. unit
 ```
 
 ## Day 2-Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells
-### Define Width and Height of Core and Die
+### Define Width and Height of Core and Die:
 ![29](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55a63d32-ba1d-4fa5-afba-57585c3ce2a8)
 Consider two flip-flops: a launch flop and a capture flop, with simple combinational logic between them. A netlist outlines the connections among all components in an electronic design. Here, we depend on the sizes of the logic gates (AND & OR) and the specific flip-flops used.
 ![30](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8b42c546-aabb-4547-8f43-fdda11703c9c)
@@ -167,12 +167,18 @@ Consider a large combinational logic circuit with 𝑁 logic gates performing a 
 ![38](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b248bc65-3f29-4eaf-9197-6a294224f8ef)
 *Extending Input/Output Pins and Black Boxing :*
 After dividing the circuit into Block A and Block B, we proceed with extending the input and output pins for each block. Then, we black box these blocks, making their internal details invisible to anyone looking at the main netlist. This process involves the following steps:
-*Extend Input/Output Pins:*
+
+
+- *Extend Input/Output Pins:*
 - Extend the input and output pins for both Block A and Block B to facilitate connections with other parts of the circuit.
-*Black Box the Blocks:*
+
+  
+- *Black Box the Blocks:*
 - Encapsulate Block A and Block B as black boxes. This means the internal logic of each block is hidden, and only the input and output interfaces are visible.
 - This abstraction makes the upper portion of each block invisible from the top-level view or to anyone examining the main netlist.
-*Separate into Different IPs or Modules:*
+
+  
+- *Separate into Different IPs or Modules:*
 - Once black-boxed, Block A and Block B can be treated as independent Intellectual Property (IP) blocks or modules.
 - These IPs can now be integrated separately into different designs or reused in other projects.
 
@@ -182,13 +188,15 @@ One significant advantage of black boxing and using pre-placed cells is the abil
 
 The process of arranging these IPs on a chip is known as floorplanning. In this phase, IPs are given specific, user-defined locations on the chip. These designated positions ensure optimal performance and efficient use of space. Before automated placement and routing, these strategically positioned IPs are referred to as "pre-placed cells." By fixing their locations, we ensure that the placement and routing tools do not alter their positions, maintaining the integrity of the design.
 
+
+![40](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84ec243f-7a98-4831-b9a1-a6bf46c88758)
 ### De-coupling capacitors
 To address the switching current demands of pre-placed cells, we incorporate decoupling capacitors into the circuit. Consider a scenario where a gate, such as an AND gate, transitions from Logic 0 to Logic 1 or vice versa. During this transition, the gate requires a certain amount of current, known as the peak current, to charge or discharge the capacitor representing the logic state.
 
 The decoupling capacitor acts as a reservoir of charge, ensuring a stable and adequate supply of current during these transitions. When the gate switches from Logic 0 to Logic 1, the capacitor is charged from the supply voltage VSS. Conversely, when the gate switches from Logic 1 to Logic 0, the capacitor discharges, and the excess charge is collected by VSS.
 
 However, due to the presence of resistance (Rdd) and inductance (Ldd) in the circuit, there will be a voltage drop across them during switching operations. As a result, the voltage at Node 'A' may deviate from the ideal supply voltage Vdd, denoted as Vdd'. This deviation can impact the performance and reliability of the circuit, underscoring the importance of carefully selecting decoupling capacitors and managing the parasitic effects of resistance and inductance.
-![40](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84ec243f-7a98-4831-b9a1-a6bf46c88758)
+
 The deviation in voltage, denoted as Vdd', from the ideal logic 1 voltage (1 volt) can pose a challenge, especially if it falls below a certain threshold. For instance, if Vdd' measures at 0.97 volts, it may fall within an undefined range between the voltage levels corresponding to logic 0 and logic 1. In digital circuits, voltage ranges are defined to distinguish between logic 0 and logic 1 states, ensuring reliable signal interpretation. Typically, any voltage below the input low voltage (Vil) threshold is considered logic 0, while voltages above the input high voltage (Vih) threshold are considered logic 1. The region between Vil and Vih is regarded as an undefined region, where the voltage levels may lead to ambiguous signal interpretation. Therefore, careful consideration of voltage thresholds and signal ranges is essential for ensuring the proper operation and reliability of digital circuits.
 ![41](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/00b20f77-b345-437a-854f-18e5cd4c21e8)
 
@@ -240,7 +248,7 @@ Another critical consideration is the blocking of the pin placement area for rou
 With these preparations completed, the floor plan is now ready for the Placement and Routing step of the design process. This step involves placing the logic cells and routing connections according to the established floor plan, ensuring efficient signal flow and optimal performance of the chip design.
 ![53](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6e1749f2-6dd2-4295-9b02-d7ca891fc71d)
 
-## To initiate the OpenLANE flow and execute floorplan operations, utilize the following commands
+*To initiate the OpenLANE flow and execute floorplan operations, utilize the following commands*
 
 ```bash
 
@@ -252,7 +260,6 @@ docker
 ```tcl
 
 ./flow.tcl -interactive
-
 
 package require openlane 0.9
 
@@ -295,7 +302,7 @@ Die\ height\ in\ microns = \frac{671405}{1000} = 671.405\ Microns
 Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 ```
 
-To load the floorplan definition in Magic from another terminal, execute the following commands.
+*To load the floorplan definition in Magic from another terminal, execute the following commands.*
 
 ```bash
 

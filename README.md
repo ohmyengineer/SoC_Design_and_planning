@@ -414,7 +414,7 @@ Transition time, a crucial parameter in waveform analysis, is determined by subt
 
 
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
-### SPICE deck creation for CMOS inverter:
+
 #### IO placer revision:
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane/configuration/
@@ -425,7 +425,7 @@ less floorplan.tcl
 ```
 
 ![IO 1](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/36f68883-60e3-4313-a094-b9f96807db92)
-** floorplan.tcl file **
+**floorplan.tcl file**
 ![IO 2](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/20fdc3d3-dba0-4b26-b257-05a6608e7aa2)
 ```tcl
 set ::env(FP_IO_MODE) 2
@@ -455,6 +455,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![IO 7](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1b9e27db-6588-47df-aff0-31a18222b8c4)
 ![IO 8](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a40e7aa1-dfb0-4dbd-9729-434659c3b3d4)
 
+### SPICE deck creation for CMOS inverter:
 **VTC-SPICE simulations:** VTC-SPICE simulations commence with the generation of a SPICE deck, akin to a netlist, containing essential connectivity information. This deck includes specific points designated for output and input connections required for the simulation.
 
 **Component connectivity:** Component connectivityplays a crucial role in this process, necessitating the provision of substrate pin connections. Adjustments to the threshold voltages of PMOS and NMOS components are facilitated through the substrate pin connection. This step ensures accurate modeling and simulation of component behavior within the circuit.
@@ -659,7 +660,7 @@ ex2spice
 Maximum Vdd Value:
 ![max vdd value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7f91c262-e719-4083-922a-f4587202d776)
 **Maximum Vdd value = 3.30V**
-Voltages at 20% and 80% of maximum voltage:
+- *Voltages at 20% and 80% of maximum voltage:*
 ```math
 20\%\ of\ output = 0.66\ V
 ```

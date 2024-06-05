@@ -855,7 +855,7 @@ lef write
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
 
-cp sky130_vsdinv.lef ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+cp sky130_vsdinv.lef home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
 ```
 ![198](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9bdeab41-5fe6-4438-a3f4-81206ff9734e)

@@ -240,12 +240,34 @@ Another critical consideration is the blocking of the pin placement area for rou
 With these preparations completed, the floor plan is now ready for the Placement and Routing step of the design process. This step involves placing the logic cells and routing connections according to the established floor plan, ensuring efficient signal flow and optimal performance of the chip design.
 ![53](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6e1749f2-6dd2-4295-9b02-d7ca891fc71d)
 
+## To initiate the OpenLANE flow and execute floorplan operations, utilize the following commands
 
+```bash
+
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+
+docker
+```
+```tcl
+
+./flow.tcl -interactive
+
+
+package require openlane 0.9
+
+prep -design picorv32a
+
+run_synthesis
+
+run_floorplan
+```
 ![54](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/21e807fc-2503-4fdd-8c2e-f613bdc914e9)
+The config.tcl file, located in the runs folder, contains all configurations necessary for the flow. It houses parameters and settings crucial for the execution of the workflow. By referring to this file, users can access a comprehensive list of acceptable arguments and their respective values within the current flow, enabling precise customization of the OpenLANE flow to achieve desired outcomes.
 
 ![55](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/dea0d1e7-f865-4155-a3b6-f40238164708)
 
-
+The floorplan.tcl file, situated within the runs folder, outlines the physical layout of the chip design. It specifies parameters like area allocation, power distribution, and pin placement constraints, guiding the optimization of chip layout for efficient routing and signal integrity.
 
 ![56](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a4616d7c-fe50-49f6-a3eb-ca2363dd9d29)
 
@@ -273,7 +295,14 @@ Die\ height\ in\ microns = \frac{671405}{1000} = 671.405\ Microns
 Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 ```
 
+To load the floorplan definition in Magic from another terminal, execute the following commands.
 
+```bash
+
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
 ![58](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/51fed000-69ff-41bf-98f1-a8f4de3ccd8f)
 
 ![59](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/35d65ebf-1959-4fa2-9b7a-e2fd3ba33712)

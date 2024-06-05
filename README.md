@@ -1,5 +1,6 @@
 # SoC_Design_and_planning
-This repository contains the projects and work I completed during the VSD SoC Design and Planning workshop. It includes various aspects of SoC design, such as architecture, RTL design, physical design, DFT, power management, timing analysis, and project planning. These files showcase the skills and techniques I learned.
+In this repository, I've curated a collection of assignments completed during the VSD SoC Design and Planning workshop. Each assignment explores different facets of System-on-Chip (SoC) design, covering topics such as architecture, RTL design, synthesis, floorplanning, power planning, pin placement, library creation, placement algorithms, cell design, circuitry fundamentals, layout design, timing analysis, DRC rules, STA methodologies, clock tree synthesis, power distribution networks, and routing techniques. Delve into these assignments to gain valuable insights and practical knowledge in the exciting field of SoC design.
+
 1) [Day 1-Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
 2) [Day 2-Good FloorPlan Vs Bad FloorPlan and Introduction to Library Cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
 3) [Day 3-Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)

@@ -670,22 +670,59 @@ Cell\ Fall\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ 
 Cell\ Fall\ Delay = 4.07529 - 4.05006 = 0.02523\ ns 
 ```
 
+#### *Locate and fix issues in the DRC section of the old Magic tech file for the Skywater process:*
+
+Sky130 Periphery rules Link: [https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html](https://skywater-pdk.readthedocs.io/en/main/rules/periphery.html)
+
+
+```bash
+cd
+
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+
+tar xfz drc_tests.tgz
+
+cd drc_tests
+
+ls -al
+
+vim .magicrc
+
+magic -d XR &
+```
 
 ![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b7b24cf2-daa1-4e51-bc9f-d1a521e746cf)
 ![173](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bbb829d0-f97f-439e-a8e5-7b8ebc2e2522)
+*.magicrc File:*
 ![174](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55ac2331-c031-4917-8c95-da61abedf4f5)
+*Poly.9 rule incorrectly implemented:*
 ![175](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e56c7540-eeda-4503-967d-bc5523e95c0a)
 ![176](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/59056dae-e747-42a4-a776-dedccddc8228)
 ![177](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/613608c9-aefa-437b-8a9b-171d93602713)
 ![178](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9c4ef9a7-5106-40dd-905a-b0cd25269a03)
 ![179](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7e1d263a-2684-47d0-959d-52468e890a12)
+*New commands added to the sky130A.tech file to update DRC:*
 ![180](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/889591b2-197b-4c97-9943-ac6c18b990f6)
 ![181](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03e1a25c-b945-4b3a-b22b-c9760953bc78)
+
+Commands to run in tkcon window
+
+```tcl
+
+tech load sky130A.tech
+
+drc check
+
+drc why
+```
+*After rule is implemented:*
 ![182](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/97d98166-621c-4c42-8258-4d79695677fa)
+
+*Correction of the incorrectly implemented difftap.2 simple rule:*
 ![183](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/46d5ebb8-74cc-49cb-9b18-8d1a04775403)
 ![184](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6eac334c-2106-4e36-acf8-d4e5250e8cdd)
+*Inserted new commands in sky130A.tech file to update DRC:*
 ![185](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/86306eae-5209-4fe4-b0b7-6b1560bc488d)
-
 ![186](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/072a12e9-b6a4-45b4-bf03-e9bf083d9b4d)
 ![187](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/24ddcec4-ce37-4071-a40e-0e793432a167)
 ![188](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cdd1e8cf-7a02-48c9-9ff0-fc026ebd350b)

@@ -49,7 +49,7 @@ Within the system software, three layers are present:
 
 Together, these layers enable software execution on computer systems by managing resources, translating code, and facilitating communication with hardware.
 
-Steps to start the OpenLANE process and carry out synthesis:
+**Steps to start the OpenLANE process and carry out synthesis:**
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane
 docker
@@ -124,7 +124,7 @@ Total \ Area=2+1+1=4 sq. units
 
 ![34](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/10b02ad8-ee0d-49d9-84da-3413620bded6)
 Consider a silicon wafer where the logic circuits are implemented. The small square within the silicon wafer is known as the Die. Inside the Die, there is a section called the Core.
-*Placement of Logic Inside the Core*
+**Placement of Logic Inside the Core**
 Now, let's place the specific logic inside the Core. Given that the netlist will occupy the entire area of the Core, it implies a 100% utilization of the Core. From this, we can calculate the utilization factor.
 *Utilization Factor Calculation*
 The utilization factor is defined as the ratio of the area occupied by the logic to the total area of the Core.
@@ -135,16 +135,16 @@ Utilization\ Factor = \frac{Area\ Occupied\ by\ Logic}{Total\ Area\ of\ Core}
 Given:
 - The total area occupied by the netlist (logic) is 4 square units (as calculated earlier).
 - Assume the Core's total area is exactly 4 square units to match the logic placement for 100% utilization.
-*Utilization Factor*
+**Utilization Factor**
 ```math
 
-Utilization\ Factor = \frac{4 sq.\ units}{4 sq.\ units}
+Utilization\ Factor = \frac{4 sq.\ units}{4 sq.\ units}×100%
 ```
 ```math
 Utilization\ Factor=1×100%=100%
 ```
 Thus, the utilization factor is 100%, indicating that the logic completely occupies the Core area
-*Aspect Ratio*
+**Aspect Ratio**
 The aspect ratio is defined as the ratio of the width to the height of a rectangular area. 
 Core is a square with each side being 2 units
 ```math
@@ -159,26 +159,26 @@ Aspect\ Ratio\ of\ Core = \frac{2}{2} = 1
 
 ![37](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/46064baf-3bba-4161-bccd-a9c915d9e24a)
 
-*Locations of Preplaced Cells*
+**Locations of Preplaced Cells**
 Consider a large combinational logic circuit with 𝑁 logic gates performing a significant function. To manage its complexity, we divide the circuit into smaller segments. Specifically, we split the circuit into two parts, placing each into separate blocks, Block A and Block B. These blocks are then implemented independently.
 - This approach allows for effective management of complexity, optimal performance, and better utilization of chip area by handling each block independently.
 
 
 ![38](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b248bc65-3f29-4eaf-9197-6a294224f8ef)
-*Extending Input/Output Pins and Black Boxing :*
+**Extending Input/Output Pins and Black Boxing :**
 After dividing the circuit into Block A and Block B, we proceed with extending the input and output pins for each block. Then, we black box these blocks, making their internal details invisible to anyone looking at the main netlist. This process involves the following steps:
 
 
-- *Extend Input/Output Pins:*
+- **Extend Input/Output Pins:**
 - Extend the input and output pins for both Block A and Block B to facilitate connections with other parts of the circuit.
 
   
-- *Black Box the Blocks:*
+- **Black Box the Blocks:**
 - Encapsulate Block A and Block B as black boxes. This means the internal logic of each block is hidden, and only the input and output interfaces are visible.
 - This abstraction makes the upper portion of each block invisible from the top-level view or to anyone examining the main netlist.
 
   
-- *Separate into Different IPs or Modules:*
+- **Separate into Different IPs or Modules:**
 - Once black-boxed, Block A and Block B can be treated as independent Intellectual Property (IP) blocks or modules.
 - These IPs can now be integrated separately into different designs or reused in other projects.
 
@@ -217,7 +217,7 @@ Furthermore, with a single "Vdd" tap point, all capacitors previously at "0" vol
 
 The observed phenomena, characterized by a drop in supply voltage, stems from the concentration of electricity at a single point. The solution to this issue lies in employing multiple power supplies. By doing so, each block can draw power from the nearest power source and discharge it to the nearest ground. This distribution of power and ground connections forms a mesh topology, ensuring more uniform and efficient power distribution throughout the circuit.
 ![49](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9861c48a-3397-4517-b77c-f9448502c859)
-*The power planning for the top view is depicted below:*
+**The power planning for the top view is depicted below:**
 ![50](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d04dab76-87a4-49cf-9f59-407e2e9d2e9e)
 ## Pin placement 
 
@@ -248,7 +248,7 @@ Another critical consideration is the blocking of the pin placement area for rou
 With these preparations completed, the floor plan is now ready for the Placement and Routing step of the design process. This step involves placing the logic cells and routing connections according to the established floor plan, ensuring efficient signal flow and optimal performance of the chip design.
 ![53](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6e1749f2-6dd2-4295-9b02-d7ca891fc71d)
 
-*To initiate the OpenLANE flow and execute floorplan operations, utilize the following commands*
+**To initiate the OpenLANE flow and execute floorplan operations, utilize the following commands**
 
 ```bash
 
@@ -302,7 +302,7 @@ Die\ height\ in\ microns = \frac{671405}{1000} = 671.405\ Microns
 Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 ```
 
-*To load the floorplan definition in Magic from another terminal, execute the following commands.*
+**To load the floorplan definition in Magic from another terminal, execute the following commands.**
 
 ```bash
 
@@ -327,9 +327,9 @@ We'll proceed by removing the wires from the design. Within the Library, all the
 ![63](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/205d1a70-da96-4aea-8bb8-3d6003611245)
 The library is akin to a collection of books, housing gates and flip-flops. It contains timing information and is subdivided into shape and delay sub-libraries. Each component exists in multiple flavors, offering different sizes and configurations. Designers select components based on timing requirements and floorplan space availability for optimal chip design.
 ![64](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/546ee348-1c3e-4507-b8e7-b70552288c9f)
-*Placement:* Placement is a critical step in chip design, involving the strategic positioning of gates and flip-flops on the floorplan in accordance with their specified shapes and sizes. The floorplan, complete with input and output ports and dimensions assigned to each gate, serves as the foundation for this process. Guided by the netlist, which provides crucial connection information, placement ensures that every component is physically positioned to establish the necessary connections. It's crucial that preplaced cells maintain their positions to prevent overlap and preserve logical connectivity. The netlist circuit is exclusively utilized for creating connections on the floorplan, ensuring that the physical layout aligns with the logical connections defined in the netlist. This meticulous arrangement enables seamless interaction between the circuit and its input/output ports, crucial for maintaining timing and minimizing delays. Any remaining components are arranged based on the floorplan blueprint, with optimization employed to address any distance discrepancies, ultimately striving for an optimal layout conducive to efficient circuit operation.
+**Placement:** Placement is a critical step in chip design, involving the strategic positioning of gates and flip-flops on the floorplan in accordance with their specified shapes and sizes. The floorplan, complete with input and output ports and dimensions assigned to each gate, serves as the foundation for this process. Guided by the netlist, which provides crucial connection information, placement ensures that every component is physically positioned to establish the necessary connections. It's crucial that preplaced cells maintain their positions to prevent overlap and preserve logical connectivity. The netlist circuit is exclusively utilized for creating connections on the floorplan, ensuring that the physical layout aligns with the logical connections defined in the netlist. This meticulous arrangement enables seamless interaction between the circuit and its input/output ports, crucial for maintaining timing and minimizing delays. Any remaining components are arranged based on the floorplan blueprint, with optimization employed to address any distance discrepancies, ultimately striving for an optimal layout conducive to efficient circuit operation.
 ![65](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/da4aa11d-cca3-4150-acb7-586c6219462f)
-*Optimize placement:*
+**Optimize placement:**
 In optimizing placement, the issue of distancing is addressed, as exemplified by the distance between FF1 and Din2. Before proceeding to routing or wiring, capacitances are estimated to gauge signal integrity. The capacitance from Din2 to FF1 can be significant due to the lengthy wire, resulting in high resistance. This lengthy distance poses challenges for FF1 to receive the input signal effectively. To mitigate this, intermediate steps known as Repeaters are introduced. Repeaters act as buffers, reconditioning the original signal and generating a new signal that replicates the original, which is then forwarded. This process continues until reaching the target cell, maintaining signal integrity throughout. While repeaters effectively resolve signal integrity issues, they result in increased area consumption within the floorplan, as more repeaters are added.
 - In Stage 1, the signal transmission does not necessitate the use of repeaters due to the manageable distances involved. However, in Stage 2, the increased distance leads to longer wire lengths, causing signal degradation beyond a certain range. Consequently, repeaters are essential to boost and maintain signal integrity over these extended distances.
 - Similar to Stage 2, in Stage 3, a buffer is necessary between gate2 and FF2 to ensure signal integrity. This buffer helps to maintain the signal's strength and integrity over the distance between the two components, ensuring reliable communication between them.
@@ -337,7 +337,7 @@ In optimizing placement, the issue of distancing is addressed, as exemplified by
 
 ![66](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/68539627-8f88-4df2-8052-c3b94b5d5d55)
 
-*Command to run placement:*
+**Command to run placement:**
 
 ```tcl
 run_placement
@@ -350,7 +350,7 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
 ![68](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/538d02d8-0ecb-4e34-8235-4d49a5e42edb)
-*Standard cells are placed in accordance with legal standards to ensure compliance with design regulations and constraints:*
+**Standard cells are placed in accordance with legal standards to ensure compliance with design regulations and constraints:**
 ![69](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03b24ff7-4ddc-4996-b707-c6333dd3a275)
 ## Inputs for cell design flow:
 
@@ -367,14 +367,14 @@ The Design Steps phase involves the actual creation and refinement of the invert
 
 Finally, in the Outputs stage, the completed inverter design is generated. This includes the layout of the inverter, simulation results, timing analysis data, and any other relevant output information. These outputs serve as the deliverables of the cell design process, ready for integration into larger IC designs.
 ![72](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/904a6acf-7cea-483e-88b4-ee106955f7c5)
-*Inputs:* Essential inputs for cell design include Process Design Kits (PDKs), DRC and LVS rules, SPICE models, libraries, and user-defined specifications. PDKs provide fabrication process details, while DRC and LVS rules ensure design compliance. SPICE models offer insight into transistor behavior, crucial for accurate circuit simulation. These inputs collectively guide the design process, enabling the creation of robust cell designs.
+**Inputs:** Essential inputs for cell design include Process Design Kits (PDKs), DRC and LVS rules, SPICE models, libraries, and user-defined specifications. PDKs provide fabrication process details, while DRC and LVS rules ensure design compliance. SPICE models offer insight into transistor behavior, crucial for accurate circuit simulation. These inputs collectively guide the design process, enabling the creation of robust cell designs.
 ![73](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/00c21afc-e901-43e8-aaf0-1246ee8fc4d8)
 
 ![74](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/92ac81f0-1048-4af1-a1ee-816c9ddf211a)
 ### *Circuit design steps:* 
-*Design Steps:* The design process unfolds in three main steps: circuit design, layout design, and characterization. Within circuit design, the process commences with implementing the desired function. This is followed by modeling the PMOS and NMOS transistors to conform to the library standards. Cell height is determined by the separation between the power and ground rails, while cell width is influenced by factors such as timing, drive strength, supply voltage, and metal layers. These parameters collectively guide the design specifications and inform subsequent design stages.
+**Design Steps:** The design process unfolds in three main steps: circuit design, layout design, and characterization. Within circuit design, the process commences with implementing the desired function. This is followed by modeling the PMOS and NMOS transistors to conform to the library standards. Cell height is determined by the separation between the power and ground rails, while cell width is influenced by factors such as timing, drive strength, supply voltage, and metal layers. These parameters collectively guide the design specifications and inform subsequent design stages.
 ![75](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cf4d6357-96c7-419b-9b88-7e925211e8db)
-*Euler path:* An Euler path is a sequence of edges in a graph that connects all the vertices, visiting each edge exactly once.
+**Euler path:** An Euler path is a sequence of edges in a graph that connects all the vertices, visiting each edge exactly once.
 ![76](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0503f9e1-0509-447f-8310-45a6eec3d69c)
 
 ![77](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2cccad14-3901-4f84-a86e-729a4d60a7ed)
@@ -413,15 +413,15 @@ Transition time, a crucial parameter in waveform analysis, is determined by subt
 
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
 ### SPICE deck creation for CMOS inverter:
-*VTC-SPICE simulations:* VTC-SPICE simulations commence with the generation of a SPICE deck, akin to a netlist, containing essential connectivity information. This deck includes specific points designated for output and input connections required for the simulation.
+**VTC-SPICE simulations:** VTC-SPICE simulations commence with the generation of a SPICE deck, akin to a netlist, containing essential connectivity information. This deck includes specific points designated for output and input connections required for the simulation.
 
-*Component connectivity:* Component connectivityplays a crucial role in this process, necessitating the provision of substrate pin connections. Adjustments to the threshold voltages of PMOS and NMOS components are facilitated through the substrate pin connection. This step ensures accurate modeling and simulation of component behavior within the circuit.
+**Component connectivity:** Component connectivityplays a crucial role in this process, necessitating the provision of substrate pin connections. Adjustments to the threshold voltages of PMOS and NMOS components are facilitated through the substrate pin connection. This step ensures accurate modeling and simulation of component behavior within the circuit.
 
-*Component values:* Component values, particularly those for PMOS and NMOS, are crucial considerations in VTC-SPICE simulations. Here, both PMOS and NMOS components are assigned identical sizes, ensuring uniformity in their characteristics and behaviors. By maintaining consistency in component sizes, accurate simulations can be conducted, facilitating comprehensive analysis of the circuit's performance and behavior across varying input conditions.
+**Component values:** Component values, particularly those for PMOS and NMOS, are crucial considerations in VTC-SPICE simulations. Here, both PMOS and NMOS components are assigned identical sizes, ensuring uniformity in their characteristics and behaviors. By maintaining consistency in component sizes, accurate simulations can be conducted, facilitating comprehensive analysis of the circuit's performance and behavior across varying input conditions.
 
-*Identify the nodes:* Identifying nodes is a fundamental aspect of circuit analysis, referring to the points between which components are connected. These nodes play a vital role in defining the netlist, providing essential connectivity information for the circuit simulation. By accurately identifying and labeling nodes, the netlist can effectively represent the circuit's topology, enabling comprehensive analysis and simulation of its behavior. Now we wiil name these nodes as Vin, Vss, Vdd, out.
+**Identify the nodes:** Identifying nodes is a fundamental aspect of circuit analysis, referring to the points between which components are connected. These nodes play a vital role in defining the netlist, providing essential connectivity information for the circuit simulation. By accurately identifying and labeling nodes, the netlist can effectively represent the circuit's topology, enabling comprehensive analysis and simulation of its behavior. Now we wiil name these nodes as Vin, Vss, Vdd, out.
 
-*Let's proceed with drafting the SPICE deck following the format outlined below:*
+**Let's proceed with drafting the SPICE deck following the format outlined below:**
 
 *For the M1 MOSFET:*
 - The drain is connected to the out node.
@@ -443,7 +443,7 @@ Each model, characterized by its unique width, fulfills a specific purpose. Desp
 ![91](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/971b6fed-1324-4002-bd43-cc077127a693)
 The figure indicates that Vin equals Vout at approximately Vm~0.9v. This is a critical juncture for CMOS devices as both PMOS and NMOS transistors may be activated concurrently, posing a risk of current leakage (direct flow from power to ground). Comparing these two graphs aids in understanding the concept of switching threshold voltage. By examining the graph, we can discern the regions where the PMOS and NMOS transistors operate. Notably, the direction of current flow differs for NMOS and PMOS.
 ![92](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8a6730c7-1447-4a24-8cf8-c5ee26ae0e3b)
-*Static and dynamic simulation of CMOS inverter:*
+**Static and dynamic simulation of CMOS inverter:**
 In our exploration of the CMOS inverter, we'll delve into its rise and fall delays, examining how they vary with Vm using dynamic simulation. Everything else in this simulation will remain consistent, except for the input, which will be a pulse, and the simulation command, which will be .trans. This will enable us to generate a Time vs. Voltage graph, facilitating the calculation of rise and fall delays.
 ![93](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/36310ebd-dd20-409e-874f-27f2cc8f589e)
 
@@ -451,7 +451,7 @@ In our exploration of the CMOS inverter, we'll delve into its rise and fall dela
 
 ![95](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1f5635f5-0858-428c-a805-893c1bed3999)
 
-*Clone custom inverter standard cell design from github repository:*
+**Clone custom inverter standard cell design from github repository:**
 
 ```bash
 cd Desktop/work/tools/openlane_working_dir/openlane
@@ -519,7 +519,7 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![115](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3e48d68d-d5ad-47d6-87d7-7d2125fc2547)
 
 ![116](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/074507d0-c8ab-428f-9226-c91a4711dbe0)
-
+**4) Formation of 'gate':**
 ![117](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d277c2d5-98ce-4335-9f15-18dfc3466839)
 
 ![118](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0df2ba0c-43b5-4bf4-bda5-61e4b339fb46)
@@ -529,7 +529,7 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![120](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/53316a16-9739-4fe2-b113-cec67aa76b4a)
 
 ![121](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/630099b8-8074-4aa1-bf3d-18e9fdcfed51)
-
+**5) lightly doped drain(LDD) formation:**
 ![122](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b88a28e1-fd89-44c8-8a30-699f8bc9fb00)
 
 ![123](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/22641b98-486e-4b44-8104-e112828ced7b)
@@ -539,7 +539,7 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![125](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/44bb4e0f-817d-4e74-bc73-54911fee50c2)
 
 ![126](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f2db9dd0-4421-4e9b-8401-22347f6d2397)
-
+**6) Source and Drain Formation:**
 ![127](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1ea9eb21-de6a-4930-a713-5364783669cf)
 
 ![128](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/35f01c5d-7e06-4d0b-b460-08a50f84774b)
@@ -549,7 +549,7 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![130](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/442890db-2afd-4141-91a9-10a3773e25f5)
 
 ![131](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/90c138b5-ce3d-4b88-b4f3-7f58bbad3002)
-
+**7) Steps to form contacts and interconnects (local):**
 ![132](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3f3f2a4e-59e2-407a-9219-df855692c5ea)
 
 ![133](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d5b599bd-974c-49d6-8590-5c4f6e7d1491)
@@ -561,7 +561,7 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![136](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9ebe0e33-9af7-4998-9ff0-7c2b2eecba8e)
 
 ![137](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/929bb87c-5699-4ae1-819a-426cd748fa66)
-
+**8) Higher level Metal Formation:**
 ![138](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/3d35adb2-844b-40a7-b600-2c639a293895)
 
 ![139](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c1806688-1930-41d4-95b1-85d521f2a3f0)
@@ -591,15 +591,26 @@ p-type silicon substrate is selected . A p-type substrate is a silicon base laye
 ![151](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/28c09e11-f566-4be6-ba34-da89f2b2ffe8)
 
 ![152](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6065db19-d7b6-4ffa-951d-3ed01a9f89bc)
-
+** Determining unit distance in a layout grid **
 ![153](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/c3476735-ed6e-4416-a71e-81dbd24d06ee)
+**Commands to run in tkcon window:**
+
+```tcl
+pwd
+
+extract all
+
+ext2spice cthresh 0 rthresh 0
+
+ex2spice
+```
 
 ![154](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/6092c3a0-1541-4525-a96b-393d46fed15a)
-
+** SPIC3 file created from sky130_inv.ext **
 ![155](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03d24991-9a09-4bec-9c77-b1bb3920609c)
-
+** Modified SPIC3 file **
 ![156](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/07ba14bc-9010-4d2d-a927-02670e4a55fa)
-
+#### Post layout ngspice simulations:
 ![157](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/14ecda51-4ec6-4cfe-839c-c0535c7cd0dc)
 
 ![158](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/84be91b1-ce55-4888-bfef-22fb82415217)
@@ -613,7 +624,7 @@ Voltages at 20% and 80% of maximum voltage:
 ```math
 80\%\ of\ output = 2.64\ V
 ```
-### Rise Time
+### Rise Time:
 ```math
 Rise\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ taken\ for\ output\ to\ rise\ to\ 20\%
 ```
@@ -632,7 +643,7 @@ Rise\ time = 2.2396 - 2.17993 = 0.05967\ ns
 
 
 
-### Fall Time
+### Fall Time:
 ```math
 Fall\  time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ taken\ for\ output\ to\ fall\ to\ 80\%
 ```
@@ -650,7 +661,7 @@ Fall\  time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ taken\ for\ o
 Fall\ time = 4.09338 - 4.07095 = 0.02243\ ns
 ```
 
-### Cell Rise delay
+### Cell Rise delay:
 ```math
 Cell\ Rise\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ for\ input\ to\ fall\ to\ 50\%
 ```
@@ -663,7 +674,7 @@ Cell\ Rise\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ 
 Cell\ Rise\ Delay = 2.20722 - 2.15008 = 0.0574\ ns
 ```
 
-### Cell Fall delay
+### Cell Fall delay:
 ```math
 Cell\ Fall\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ for\ input\ to\ rise\ to\ 50\%
 ```

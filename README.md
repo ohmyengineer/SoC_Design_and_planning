@@ -451,16 +451,37 @@ In our exploration of the CMOS inverter, we'll delve into its rise and fall dela
 
 ![95](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1f5635f5-0858-428c-a805-893c1bed3999)
 
+*Clone custom inverter standard cell design from github repository:*
+
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+git clone https://github.com/nickson-jose/vsdstdcelldesign
+
+ls -ltr
+
+cd vsdstdcelldesign
+
+cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+
+ls -ltr
+```
+
 ![96](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/2169914f-fe9a-42a5-a2c0-86772eaa255d)
 
 ![97](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f32343e9-8701-4990-ab8f-033499ae0d38)
+*Command to open custom inverter layout in magic:*
+```bash
 
+magic -T sky130A.tech sky130_inv.mag &
+```
 ![98](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bb877696-9757-4215-a11d-1694dc4ee970)
 
 ![99](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/15b75693-5d87-47d5-9248-64b2b0626920)
 
 ![100](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/eba30bd5-475d-480f-b751-e5362186feb9)
 
+*The connectivity of the output Y to the drain of both PMOS and NMOS transistors has been confirmed:*
 ![101](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e7a4bf80-1d21-4765-af63-2d0e993e0f59)
 
 ![102](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/455836f5-f50e-4543-b1d0-1cb6cc89aa56)

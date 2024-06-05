@@ -53,13 +53,19 @@ Together, these layers enable software execution on computer systems by managing
 
 **Steps to start the OpenLANE process and carry out synthesis:**
 ```bash
+
 cd Desktop/work/tools/openlane_working_dir/openlane
+
 docker
 ```
 ```tcl
 ./flow.tcl -interactive
+
+
 package require openlane 0.9
+
 prep -design picorv32a
+
 run_synthesis
 ```
 ![22](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/cb9d2ac0-62de-458a-a7dd-95d1cc6df1ab)
@@ -308,7 +314,7 @@ Area\ of\ die\ in\ microns = 660.685 * 671.405 = 443587.212425\ Square\ Microns
 
 ```bash
 
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/floorplan/
 
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
 ```
@@ -347,7 +353,7 @@ run_placement
 
 ![67](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fceb1408-4219-4373-832d-c544d9e6e577)
 ```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/placement/
 
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
@@ -924,8 +930,11 @@ run_synthesis
 ![207](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d3d9e86a-adcb-4b35-97a1-ff5f8e43391b)
 **Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow:**
 ```tcl
+
 init_floorplan
+
 place_io
+
 tap_decap_or
 ```
 ![208](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/1070323e-5e22-4b6c-ba3e-ff76d429bb07)
@@ -939,7 +948,7 @@ run_placement
 Commands to load placement def in magic in another terminal
 
 ```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/24-03_10-03/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/placement/
 
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
@@ -972,13 +981,13 @@ sta pre_sta.conf
 ![217](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/d472c215-88a4-47eb-a535-d68c47081015)
 
 ```bash
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/synthesis/
 
 cp picorv32a.synthesis.v picorv32a.synthesis_old.v
 
 ```
 ```tcl
-write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/25-03_18-52/results/synthesis/picorv32a.synthesis.v
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/synthesis/picorv32a.synthesis.v
 
 exit
 ```
@@ -1011,7 +1020,9 @@ run_synthesis
 ```tcl
 
 init_floorplan
+
 place_io
+
 tap_decap_or
 ```
 #### *Placement was successful:*
@@ -1071,7 +1082,9 @@ set ::env(SYNTH_SIZING) 1
 run_synthesis
 
 init_floorplan
+
 place_io
+
 tap_decap_or
 
 run_placement
@@ -1126,7 +1139,7 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 cd Desktop/work/tools/SPEF_EXTRACTOR
 
-python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/26-03_08-45/results/routing/picorv32a.def
+python3 main.py /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/tmp/merged.lef /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/31-05_11-50/results/routing/picorv32a.def
 ```
 **Post-Route OpenSTA timing analysis with the extracted parasitics of the route:**
 

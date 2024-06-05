@@ -1126,5 +1126,5 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 * https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd
 * Video lectures from the workshop
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/your-linkedin-profile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)]([https://www.linkedin.com/in/your-linkedin-profile](https://www.linkedin.com/in/harshitsharmavlsi/))
 

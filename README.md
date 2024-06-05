@@ -989,6 +989,21 @@ run_cts
 
 
 ## Day 5-Final steps for RTL2GDS using tritonRoute and openSTA
+### ROUTING:
+Routing is the process of creating pathways for electrical signals to navigate through the chip's layout. These pathways, formed by connecting components with wires or metal traces, enable efficient communication between different parts of the circuit. Routing is essential for ensuring signal integrity, minimizing delays, and optimizing power consumption. Global routing establishes high-level connections, while detailed routing finalizes the exact paths, considering factors like wire length and interference. Design rule checking ensures compliance with manufacturing constraints, while signal integrity analysis evaluates signal quality. Power and ground routing ensure stable power distribution, and optimization iteratively refines the routing layout to meet performance targets.
+![229aa](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55b7b0f7-b60a-419e-99a2-f1677a741106)
+### POWER PLANNING:
+Power planning is a vital part of chip design, ensuring smooth and efficient power distribution. It involves strategically placing power and ground rails across the layout to minimize voltage drops and ensure consistent power supply. Effective power planning helps prevent issues like IR drop and signal noise, ensuring reliable chip performance.
+![229a](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/67580abd-30b0-4dd9-ba24-ad14efe201f5)
+**Power Distribution Network (PDN):**
+Power planning is a pivotal stage in chip design, typically conducted concurrently with floorplanning. It involves the creation of a power grid network to uniformly distribute power across the entire design. This critical step precedes routing in the openLANE flow. The power distribution network comprises three tiers:
+
+- *Rings:* These circuits facilitate the circulation of VDD and VSS around the chip.
+- *Stripes:* Channels are responsible for transporting VDD and VSS from the Rings across the chip.
+- *Rails:* Connections are established to link VDD and VSS to the standard cell VDD and VSS.
+
+
+
 **Perform generation of Power Distribution Network (PDN) and explore the PDN layout:**
 
 ```bash

@@ -413,16 +413,38 @@ Transition time, a crucial parameter in waveform analysis, is determined by subt
 
 ## Day 3-Design library cell using Magic Layout and ngspice characterization
 ### SPICE deck creation for CMOS inverter:
+*VTC-SPICE simulations:* VTC-SPICE simulations commence with the generation of a SPICE deck, akin to a netlist, containing essential connectivity information. This deck includes specific points designated for output and input connections required for the simulation.
+
+*Component connectivity:* Component connectivityplays a crucial role in this process, necessitating the provision of substrate pin connections. Adjustments to the threshold voltages of PMOS and NMOS components are facilitated through the substrate pin connection. This step ensures accurate modeling and simulation of component behavior within the circuit.
+
+*Component values:* Component values, particularly those for PMOS and NMOS, are crucial considerations in VTC-SPICE simulations. Here, both PMOS and NMOS components are assigned identical sizes, ensuring uniformity in their characteristics and behaviors. By maintaining consistency in component sizes, accurate simulations can be conducted, facilitating comprehensive analysis of the circuit's performance and behavior across varying input conditions.
+
+*Identify the nodes:* Identifying nodes is a fundamental aspect of circuit analysis, referring to the points between which components are connected. These nodes play a vital role in defining the netlist, providing essential connectivity information for the circuit simulation. By accurately identifying and labeling nodes, the netlist can effectively represent the circuit's topology, enabling comprehensive analysis and simulation of its behavior. Now we wiil name these nodes as Vin, Vss, Vdd, out.
+
+*Let's proceed with drafting the SPICE deck following the format outlined below:*
+
+*For the M1 MOSFET:*
+- The drain is connected to the out node.
+- The gate is connected to the in node.
+- The PMOS transistor's substrate and source are linked to the Vdd node.
+
+*For the M2 MOSFET:*
+- The drain is connected to the out node.
+- The gate is linked to the in node.
+- The NMOS source and substrate are both connected to 0.
 ![88](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b0cb042d-44cb-4213-ad43-b918d603535b)
-
+### SPICE simulation lab for CMOS inverter:
+Having reviewed the CMOS inverter's connectivity thus far, we'll now explore the connections of other components, like the load capacitor and source. Let's delve into the connectivity of the output load capacitor. It's associated with both node 0 and out, with a capacitance value of 10ff. Similar to the supply voltage (Vdd), positioned between Vdd and node 0 with a value of 2.5, we have an input voltage (Vin) bridging Vin and node 0. Next, we proceed to input the simulation commands, where Vin is swept with a step size of 0.05 from 0 to 2.5, corresponding to our desire for Vout while modifying Vin. The final step entails incorporating the model files, which furnish comprehensive descriptions of the NMOS and PMOS components.
 ![89](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0c1d1b38-075d-4ad9-8ccc-1f5d111c5d9f)
-
+Now, we will execute the SPICE simulation with the specified values and generate the corresponding graph.
 ![90](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/16472b9e-ad60-481c-9c04-3a9b0a769365)
-
+### Switching Threshold Vm:
+Each model, characterized by its unique width, fulfills a specific purpose. Despite varying voltage levels, both models exhibit the same waveform shape, showcasing the robustness of CMOS technology. Regardless of changes in NMOS or PMOS sizes, CMOS logic maintains consistency across all sizes, with production peaking when Vin is low and dipping when Vin is high. This uniform behavior underscores CMOS logic's widespread use in gate design. The switching threshold, denoted as Vm, plays a crucial role in determining the inverter's robustness. When Vin equals Vout, the switch occurs, marking the transition point between levels.
 ![91](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/971b6fed-1324-4002-bd43-cc077127a693)
-
+The figure indicates that Vin equals Vout at approximately Vm~0.9v. This is a critical juncture for CMOS devices as both PMOS and NMOS transistors may be activated concurrently, posing a risk of current leakage (direct flow from power to ground). Comparing these two graphs aids in understanding the concept of switching threshold voltage. By examining the graph, we can discern the regions where the PMOS and NMOS transistors operate. Notably, the direction of current flow differs for NMOS and PMOS.
 ![92](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8a6730c7-1447-4a24-8cf8-c5ee26ae0e3b)
-
+*Static and dynamic simulation of CMOS inverter:*
+In our exploration of the CMOS inverter, we'll delve into its rise and fall delays, examining how they vary with Vm using dynamic simulation. Everything else in this simulation will remain consistent, except for the input, which will be a pulse, and the simulation command, which will be .trans. This will enable us to generate a Time vs. Voltage graph, facilitating the calculation of rise and fall delays.
 ![93](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/36310ebd-dd20-409e-874f-27f2cc8f589e)
 
 ![94](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/7e2663a2-92e2-48ae-b25d-3851f745faf9)

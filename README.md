@@ -318,18 +318,37 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 ![61](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/320367be-1666-48a5-89e6-9888343ca817)
 
+### Netlist binding and initial place design:
+
+Associate the netlist with physical cells: Let's examine the netlist comprising gates, noting that each gate's shape reflects its function. For instance, consider the gate represented by a rectangular box rather than a triangular shape. Flip-flops are depicted as square boxes, resembling the AND gate, which also appears as a box. Thus, we've assigned physical dimensions to all flip-flops and gates. Since certain shapes like AND and OR gates don't exist physically, we'll designate specific shapes and measurements for each netlist component. Additionally, all blocks will be assigned appropriate width, height, and shape attributes.
 ![62](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b46080f9-7805-4c69-816a-6ac07207a524)
+We'll proceed by removing the wires from the design. Within the Library, all the gates, flip-flops, and blocks are stored for reference. This Library serves as a repository of these components, allowing easy access and reuse during the design process. By organizing these elements in the Library, designers can efficiently manage the design components and streamline the implementation process.
 
 ![63](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/205d1a70-da96-4aea-8bb8-3d6003611245)
-
+The library is akin to a collection of books, housing gates and flip-flops. It contains timing information and is subdivided into shape and delay sub-libraries. Each component exists in multiple flavors, offering different sizes and configurations. Designers select components based on timing requirements and floorplan space availability for optimal chip design.
 ![64](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/546ee348-1c3e-4507-b8e7-b70552288c9f)
-
+*Placement:* Placement is a critical step in chip design, involving the strategic positioning of gates and flip-flops on the floorplan in accordance with their specified shapes and sizes. The floorplan, complete with input and output ports and dimensions assigned to each gate, serves as the foundation for this process. Guided by the netlist, which provides crucial connection information, placement ensures that every component is physically positioned to establish the necessary connections. It's crucial that preplaced cells maintain their positions to prevent overlap and preserve logical connectivity. The netlist circuit is exclusively utilized for creating connections on the floorplan, ensuring that the physical layout aligns with the logical connections defined in the netlist. This meticulous arrangement enables seamless interaction between the circuit and its input/output ports, crucial for maintaining timing and minimizing delays. Any remaining components are arranged based on the floorplan blueprint, with optimization employed to address any distance discrepancies, ultimately striving for an optimal layout conducive to efficient circuit operation.
 ![65](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/da4aa11d-cca3-4150-acb7-586c6219462f)
+*Optimize placement:*
+In optimizing placement, the issue of distancing is addressed, as exemplified by the distance between FF1 and Din2. Before proceeding to routing or wiring, capacitances are estimated to gauge signal integrity. The capacitance from Din2 to FF1 can be significant due to the lengthy wire, resulting in high resistance. This lengthy distance poses challenges for FF1 to receive the input signal effectively. To mitigate this, intermediate steps known as Repeaters are introduced. Repeaters act as buffers, reconditioning the original signal and generating a new signal that replicates the original, which is then forwarded. This process continues until reaching the target cell, maintaining signal integrity throughout. While repeaters effectively resolve signal integrity issues, they result in increased area consumption within the floorplan, as more repeaters are added.
+- In Stage 1, the signal transmission does not necessitate the use of repeaters due to the manageable distances involved. However, in Stage 2, the increased distance leads to longer wire lengths, causing signal degradation beyond a certain range. Consequently, repeaters are essential to boost and maintain signal integrity over these extended distances.
+- Similar to Stage 2, in Stage 3, a buffer is necessary between gate2 and FF2 to ensure signal integrity. This buffer helps to maintain the signal's strength and integrity over the distance between the two components, ensuring reliable communication between them.
+- Stage 4 presents a heightened challenge compared to previous stages. Now, the imperative is to verify the correctness of our actions. This involves conducting timing analysis, considering the optimal clocks. By scrutinizing the analysis results, we can ascertain the suitability of the placement. This meticulous examination is crucial for ensuring that the design meets performance requirements and operates as intended.
 
 ![66](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/68539627-8f88-4df2-8052-c3b94b5d5d55)
 
-![67](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fceb1408-4219-4373-832d-c544d9e6e577)
+*Command to run placement:*
 
+```tcl
+run_placement
+```
+
+![67](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/fceb1408-4219-4373-832d-c544d9e6e577)
+```bash
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
 ![68](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/538d02d8-0ecb-4e34-8235-4d49a5e42edb)
 
 ![69](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/03b24ff7-4ddc-4996-b707-c6333dd3a275)

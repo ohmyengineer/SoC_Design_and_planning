@@ -671,7 +671,7 @@ Cell\ Fall\ Delay = 4.07529 - 4.05006 = 0.02523\ ns
 ```
 
 
-![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/45768272-ab7e-47a4-99d5-2f6011d94ee0)
+![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b7b24cf2-daa1-4e51-bc9f-d1a521e746cf)
 ![173](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/bbb829d0-f97f-439e-a8e5-7b8ebc2e2522)
 ![174](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/55ac2331-c031-4917-8c95-da61abedf4f5)
 ![175](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e56c7540-eeda-4503-967d-bc5523e95c0a)

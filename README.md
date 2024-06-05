@@ -11,7 +11,7 @@ In this repository, I've curated a collection of assignments completed during th
 ## Day 1-Inception of open-source EDA, OpenLANE and Sky130 PDK
 ![0](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/756cff7b-7d94-46e7-8389-91f9fd15abb8)
 ## Introduction to QFN-48 Package, chip, pads, core, die and IPs
-![1](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/0d7463b0-57cd-4c19-b5da-151a52451b33)
+![1](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a95a660e-158c-4d0c-baa0-386c5e195e21)
 - **Die:** it denotes the dimensions of the complete chip located at the corner.
 - **Core:** This area is designated for placing the logic gates. It includes all the combinational circuits, soft and hard IPs, and nets.
 - **Pads:** This area is utilized for transmitting signals from inside the chip to the outside, or vice versa.

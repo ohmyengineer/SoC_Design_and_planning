@@ -613,28 +613,37 @@ Voltages at 20% and 80% of maximum voltage:
 ![20% vtc](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/babf7212-6e45-4bd9-b095-11badacdf06e)
 ![20% value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e1cf6261-7b5b-4984-8e8a-c03943411f13)
 
+
+
 80%
 ![80% vtc](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/ddedcd74-9432-4222-b017-b3c611c0b76b)
 ![80% value](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/35ba19b6-07d1-450d-a157-80a62eb1d1f3)
+
+
 
 ### Fall Time
 20%
 ![164](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/60fbe637-a539-44be-a958-96c76f452ef2)
 ![165](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/98aeeb13-1399-4114-8c18-4defcece8335)
 
+
+
 80%
 ![166](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/b235f006-4844-4794-981e-af13975c9188)
 ![167](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/9b59854f-2bcd-4ca2-b658-eb14c0093889)
+
 
 
 ### Cell Rise delay
 ![168](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5f1987b6-f73d-48d6-a3d5-71dc5e2db910)
 ![169](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e18c2e0e-e56e-4cb8-9710-5669ce0a36cb)
 
-### Cell Fall delay
 
+
+### Cell Fall delay
 ![170](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/66a083d4-7587-4830-a515-0ea4b4e6247b)
 ![171](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/f57c666f-f3dc-4436-a008-a2f8396e3b07)
+
 
 
 ![172](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/45768272-ab7e-47a4-99d5-2f6011d94ee0)
@@ -852,7 +861,7 @@ init_floorplan
 place_io
 tap_decap_or
 ```
-```tcl
+#### *Placement was successful:*
 ![222](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/8f7661b4-f0af-4f39-979f-3e2716ec4edc)
 ```tcl
 run_placement
@@ -860,7 +869,7 @@ run_placement
 run_cts
 ```
 ![223](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/5b0adcd1-811f-412f-a629-2c6840d87c6e)
-#### *Placement  was successful:*
+#### *Routing  was successful:*
 ![224](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/e21377a8-2788-463c-bd9d-aecb1348e5b3)
 ![225](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/64702e87-5e95-433f-9394-a52ab46b4f46)
 ![226](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/a711589d-bfac-489c-9b41-0f08df2a4f90)

@@ -1176,6 +1176,10 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 ### *Final generated layout of the complete RTL-to-GDSII flow using OpenLane:*
 ![252](https://github.com/ohmyengineer/SoC_Design_and_planning/assets/91957013/14c78ec9-a893-44cb-8391-d9772d71d950)
 
+### CERTIFICATE
+[5_VSD nasscom Certificate 2024GitHub Repo certificate.pdf](https://github.com/user-attachments/files/16287146/5_VSD.nasscom.Certificate.2024GitHub.Repo.certificate.pdf)
+
+
 ## References
 
 * https://github.com/nickson-jose/vsdstdcelldesign
